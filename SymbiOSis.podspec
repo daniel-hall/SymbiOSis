@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.license          = 'MIT'
   s.author           = { "Dan Hall" => "dan@danhall.io" }
   s.source           = { :git => "https://github.com/daniel-hall/SymbiOSis.git", :tag => s.version.to_s }
-  s.social_media_url = 'https://twitter.com/_danielhall>'
+  s.social_media_url = 'https://twitter.com/_danielhall'
 
   s.platform     = :ios, '7.0'
   s.requires_arc = true
