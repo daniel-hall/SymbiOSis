@@ -82,7 +82,7 @@
     //init setup for subclasses
 }
 
--(void)setDataSourceIndex:(NSIndexPath *)dataSourceIndexPath {
+-(void)setDataSourceIndexPath:(NSIndexPath *)dataSourceIndexPath {
     _dataSourceIndexPath = dataSourceIndexPath;
     self.value = [self.dataSource valueForIndexPath:dataSourceIndexPath];
     [self update];

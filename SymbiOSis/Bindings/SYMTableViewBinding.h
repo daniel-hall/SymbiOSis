@@ -83,6 +83,9 @@ The SYMTableViewBinding supports multiple sections, each with a potentially diff
 /** Connections to the views that should be used for the footer of each section.  Each view can also have bindings to make its labels, etc. dynamically populated from a data source.  There should be one view added to this collection per section of the table.  The same view can be added multiple times to be used for multiple sections. */
 @property (nonatomic, strong) IBOutletCollection(UIView) NSArray *footerViews;
 
+/** A comma-separated list of the desired heights of the rows for each section of the table, e.g. "100.0,50.0,80.5".  If there is only one section, a single value is sufficient. */
+@property (nonatomic) IBInspectable NSString *rowHeights;
+
 /** A comma-separated list of the desired heights of the header views for each section of the table, e.g. "100.0,50.0,80.5".  If there is only one section, a single value is sufficient. If a header view is provided for the section, using the headerViews property above, that view's height will be returned automatically and this value ignored. */
 @property (nonatomic) IBInspectable NSString *headerHeights;
 

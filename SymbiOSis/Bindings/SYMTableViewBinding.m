@@ -73,14 +73,19 @@
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
-    return cell.frame.size.height;
+    NSArray *rowHeights = [self.rowHeights componentsSeparatedByString:@","];
+    if (indexPath.section < rowHeights.count) {
+        NSString *rowHeight = rowHeights[indexPath.section];
+        return rowHeight.floatValue;
+    }
+
+    return tableView.rowHeight;
 }
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    NSArray *headerTitles = [self.footerTitles componentsSeparatedByString:@","];
-    NSArray *headerHeights = [self.footerHeights componentsSeparatedByString:@","];
+    NSArray *headerTitles = [self.headerTitles componentsSeparatedByString:@","];
+    NSArray *headerHeights = [self.headerHeights componentsSeparatedByString:@","];
     if (section < self.headerViews.count) {
         UIView *headerView = self.headerViews[section];
         return headerView.frame.size.height;
@@ -120,7 +125,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSArray *arrayOfIdentifiers = [self.cellReuseIdentifiers componentsSeparatedByString:@","];
-    NSInteger section = MIN(arrayOfIdentifiers.count - 1, indexPath.section);
+    // If there aren't identifiers provided for every section, just use the first one for all
+    NSInteger section = section < arrayOfIdentifiers.count ? section : 0;
     return [tableView dequeueReusableCellWithIdentifier:arrayOfIdentifiers[section] andDataSourceIndexPath:indexPath];
 }
 
@@ -151,6 +157,10 @@
 
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
+    NSArray *footerTitles = [self.footerTitles componentsSeparatedByString:@","];
+    if (section < footerTitles.count) {
+        return footerTitles[section];
+    }
     return nil;
 }
 
