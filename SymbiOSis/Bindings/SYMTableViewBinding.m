@@ -133,7 +133,10 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     if (section < self.headerViews.count) {
-        [self.headerViews[section] copy];
+        UIView *headerView = [self.headerViews[section] copy];
+        headerView.frame = CGRectMake(0, 0, self.view.frame.size.width, headerView.frame.size.height);
+        [headerView layoutSubviews];
+        return headerView;
     }
     return nil;
 }
@@ -141,7 +144,10 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
     if (section < self.footerViews.count) {
-        [self.footerViews[section] copy];
+        UIView *footerView = [self.footerViews[section] copy];
+        footerView.frame = CGRectMake(0, 0, self.view.frame.size.width, footerView.frame.size.height);
+        [footerView layoutSubviews];
+        return footerView;
     }
     return nil;
 }

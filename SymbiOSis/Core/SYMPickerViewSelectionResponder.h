@@ -25,10 +25,16 @@
 
 #import <Foundation/Foundation.h>
 #import "SYMResponder.h"
-#import <UIKit/UIPickerView.h>
+#import <UIKit/UIKit.h>
 
 /** Abstract superclass for responders that react to an item in a UIPickerView being selected */
 @interface SYMPickerViewSelectionResponder : SYMResponder
+
+/** If you want to limit the responder to only run for certain components of the picker view, enter the component numbers here as a comma-separated list */
+@property (nonatomic, strong) IBInspectable NSString *validComponents;
+
+/** If you want to limit the responder to only run for certain rows within the valid components, enter the row numbers here as a comma-separated list */
+@property (nonatomic, strong) IBInspectable NSString *validRows;
 
 /** Method to be overridden in subclasses to handle picker item selection.
 *
@@ -38,5 +44,8 @@
 * @param indexPath An index path object where indexPath.section represents the picker view components and indexPath.row represents the picker view row that was selected.
 */
 - (void)pickerView:(UIPickerView *)pickerView selectedValue:(NSString *)value withLabel:(UILabel *)label fromIndexPath:(NSIndexPath *)indexPath;
+
+/** Check to see if this responder should run in response to a cell selection at the given index path*/
+-(BOOL)shouldRunForIndexPath:(NSIndexPath *)indexPath;
 
 @end

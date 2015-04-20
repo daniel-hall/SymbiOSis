@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C0B516EF3A7AC60A6086934 /* SYMStaticDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C0B548B960674C5E0610989 /* SYMStaticDataSource.h */; };
+		6C0B524EAC7D7D72CB59488C /* SYMStaticDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C0B58080AA81DFECF8105EF /* SYMStaticDataSource.m */; };
 		6C0B5E67B9DB6BF0C6513252 /* UIView+SymbiOSisPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C0B5F238F17550A664C891A /* UIView+SymbiOSisPrivate.m */; };
 		6C0B5F4B08202A116126182A /* UIView+SymbiOSisPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C0B539580B86AE902D4283B /* UIView+SymbiOSisPrivate.h */; };
 		A249F029BB98C321197C0304 /* SYMDataSourcesOwner.h in Headers */ = {isa = PBXBuildFile; fileRef = A249F415899D032098EA5EBD /* SYMDataSourcesOwner.h */; };
@@ -67,6 +69,8 @@
 
 /* Begin PBXFileReference section */
 		6C0B539580B86AE902D4283B /* UIView+SymbiOSisPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SymbiOSisPrivate.h"; sourceTree = "<group>"; };
+		6C0B548B960674C5E0610989 /* SYMStaticDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMStaticDataSource.h; sourceTree = "<group>"; };
+		6C0B58080AA81DFECF8105EF /* SYMStaticDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMStaticDataSource.m; sourceTree = "<group>"; };
 		6C0B5F238F17550A664C891A /* UIView+SymbiOSisPrivate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SymbiOSisPrivate.m"; sourceTree = "<group>"; };
 		A249F03FE31EF76F157AC943 /* SYMBindingSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMBindingSet.h; sourceTree = "<group>"; };
 		A249F06AE9F254B5D8A7CCC9 /* SYMTableViewBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMTableViewBinding.h; sourceTree = "<group>"; };
@@ -146,6 +150,15 @@
 			path = Private;
 			sourceTree = "<group>";
 		};
+		6C0B5B53134A82F9E7F4CE1A /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				6C0B58080AA81DFECF8105EF /* SYMStaticDataSource.m */,
+				6C0B548B960674C5E0610989 /* SYMStaticDataSource.h */,
+			);
+			path = DataSources;
+			sourceTree = "<group>";
+		};
 		A249F392C16C4FDB457CBC5D = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +228,7 @@
 				A249FEAB6BB77D816577F786 /* Bindings */,
 				A249FB81A4C0C78343BD8037 /* Responders */,
 				6C0B59117E6A2A9169290F8E /* Private */,
+				6C0B5B53134A82F9E7F4CE1A /* DataSources */,
 			);
 			path = SymbiOSis;
 			sourceTree = "<group>";
@@ -294,6 +308,7 @@
 				A249F029BB98C321197C0304 /* SYMDataSourcesOwner.h in Headers */,
 				A249F1760B8939F8CA2266DC /* SYMPickerViewSelectionResponder.h in Headers */,
 				6C0B5F4B08202A116126182A /* UIView+SymbiOSisPrivate.h in Headers */,
+				6C0B516EF3A7AC60A6086934 /* SYMStaticDataSource.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +400,7 @@
 				A249FA8C2DF1495F3516708C /* SYMDismissKeyboardResponder.m in Sources */,
 				A249F07C5CB9B5D546D53DA2 /* SYMPickerViewSelectionResponder.m in Sources */,
 				6C0B5E67B9DB6BF0C6513252 /* UIView+SymbiOSisPrivate.m in Sources */,
+				6C0B524EAC7D7D72CB59488C /* SYMStaticDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

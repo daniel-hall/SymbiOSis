@@ -1,5 +1,5 @@
 //
-// SYMDeselectCellResponder.m
+// SYMStaticDataSource.h
 //
 // Copyright (c) 2015 Dan Hall
 // Twitter: @_danielhall
@@ -24,16 +24,13 @@
 // SOFTWARE.
 
 
-#import "SYMDeselectCellResponder.h"
+#import "SYMDataSource.h"
+#import <UIKit/UIKit.h>
 
-@implementation SYMDeselectCellResponder
+/** A simple data source that allows you to set its value via storyboard as an array of strings passed in through the staticValues property.  This is useful for creating a static data source used for a fixed number of table cells, etc. */
+@interface SYMStaticDataSource : SYMDataSource
 
-
-- (void)tableView:(UITableView *)tableView selectedCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath withValue:(id)value {
-    if ([self shouldRunForIndexPath:indexPath]) {
-        [cell setSelected:NO animated:NO];
-    }
-}
-
+/** A comma-separated list of string values that should populate this data source's value array */
+@property (nonatomic, strong) IBInspectable NSString *staticValues;
 
 @end

@@ -1,5 +1,5 @@
 //
-// SYMDeselectCellResponder.m
+// SYMStaticDataSource.m
 //
 // Copyright (c) 2015 Dan Hall
 // Twitter: @_danielhall
@@ -24,15 +24,13 @@
 // SOFTWARE.
 
 
-#import "SYMDeselectCellResponder.h"
+#import "SYMStaticDataSource.h"
 
-@implementation SYMDeselectCellResponder
+@implementation SYMStaticDataSource
 
-
-- (void)tableView:(UITableView *)tableView selectedCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath withValue:(id)value {
-    if ([self shouldRunForIndexPath:indexPath]) {
-        [cell setSelected:NO animated:NO];
-    }
+-(void)awakeFromNib {
+    [super awakeFromNib];
+    self.value = [self.staticValues componentsSeparatedByString:@","];
 }
 
 

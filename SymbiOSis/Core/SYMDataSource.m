@@ -136,7 +136,7 @@
 
 - (void)dealloc {
     for (SYMDataSource *dataSource in self.sectionDataSources) {
-        [dataSource removeObserver:self forKeyPath:NSStringFromSelector(@selector(sourceValue))];
+        [dataSource removeObserver:self forKeyPath:NSStringFromSelector(@selector(value))];
     }
 }
 

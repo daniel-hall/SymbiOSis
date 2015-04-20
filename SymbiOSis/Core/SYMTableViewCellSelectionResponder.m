@@ -33,4 +33,27 @@
     //Override in subclasses
 }
 
+-(BOOL)shouldRunForIndexPath:(NSIndexPath *)indexPath {
+    NSArray *validSections = [self.validSections componentsSeparatedByString:@","];
+    NSArray *validRows = [self.validRows componentsSeparatedByString:@","];
+    BOOL sectionIsValid = validSections.count == 0;
+    BOOL rowIsValid = validRows.count == 0;
+
+    for (NSString *section in validSections) {
+        if (section.integerValue == indexPath.section) {
+            sectionIsValid = YES;
+            break;
+        }
+    }
+
+    for (NSString *row in validRows) {
+        if (row.integerValue == indexPath.row) {
+            rowIsValid = YES;
+            break;
+        }
+    }
+
+    return sectionIsValid && rowIsValid;
+}
+
 @end

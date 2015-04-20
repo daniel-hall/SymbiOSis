@@ -25,8 +25,8 @@
 
 
 #import "SYMPickerViewBinding.h"
-#import "SYMDataSource.h"
 #import "SYMPickerViewSelectionResponder.h"
+#import "UIView+SymbiOSisPrivate.h"
 
 @interface SYMPickerViewBinding ()
 
@@ -85,10 +85,7 @@
 
 
 -(UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view {
-    // There seems to be a bug with UIPickerView related to passing in retained views through this delegate method.  The workaround is to create unowned copies of each label in our array, rather than passing in references to the original labels.  This archive / unarchive is a workaround for the lack of a -[UILabel copy] implementation.
-    NSData *archive = [NSKeyedArchiver archivedDataWithRootObject: self.dataSource.value[row]];
-    UILabel *labelCopy =   [NSKeyedUnarchiver unarchiveObjectWithData: archive];
-    return labelCopy;
+    return [self.dataSource.value[row] copy];
 }
 
 

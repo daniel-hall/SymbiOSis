@@ -30,6 +30,12 @@
 /** Abstract superclass for responders that react to a cell in a UITableView being selected */
 @interface SYMTableViewCellSelectionResponder : SYMResponder
 
+/** If you want to limit the responder to only run for certain sections of the table, enter the section numbers here as a comm-separated list */
+@property (nonatomic, strong) IBInspectable NSString *validSections;
+
+/** If you want to limit the responder to only run for certain rows within the valid sections, enter the row numbers here as a comm-separated list */
+@property (nonatomic, strong) IBInspectable NSString *validRows;
+
 /** Method to be overridden in subclasses to handle table view cell selection.
 *
 * @param tableView A reference to the UITableView that had a cell within it selected
@@ -38,5 +44,8 @@
 * @param value  The value from the SYMTableViewBinding that will be passed through a segue to the next scene, if such a segue exists.
 */
 -(void)tableView:(UITableView *)tableView selectedCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath withValue:(id)value;
+
+/** Check to see if this responder should run in response to a cell selection at the given index path*/
+-(BOOL)shouldRunForIndexPath:(NSIndexPath *)indexPath;
 
 @end
