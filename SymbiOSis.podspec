@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "SymbiOSis"
-  s.version          = "0.2.0"
+  s.version          = "0.2.1"
   s.summary          = "An MVVM-inspired framework for building apps with less code, less bugs, and in less time."
   s.homepage         = "https://github.com/daniel-hall/SymbiOSis"
   s.license          = 'MIT'
