@@ -1,0 +1,534 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6C0B5E67B9DB6BF0C6513252 /* UIView+SymbiOSisPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C0B5F238F17550A664C891A /* UIView+SymbiOSisPrivate.m */; };
+		6C0B5F4B08202A116126182A /* UIView+SymbiOSisPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C0B539580B86AE902D4283B /* UIView+SymbiOSisPrivate.h */; };
+		A249F029BB98C321197C0304 /* SYMDataSourcesOwner.h in Headers */ = {isa = PBXBuildFile; fileRef = A249F415899D032098EA5EBD /* SYMDataSourcesOwner.h */; };
+		A249F064AA0188B8750E7105 /* UITableViewCell+SymbiOSis.h in Headers */ = {isa = PBXBuildFile; fileRef = A249FF4A0CDAC40952D476EA /* UITableViewCell+SymbiOSis.h */; };
+		A249F07C5CB9B5D546D53DA2 /* SYMPickerViewSelectionResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = A249F0B09F65CF9160890A20 /* SYMPickerViewSelectionResponder.m */; };
+		A249F08F8C16D0252CE9ECCB /* SYMBindingSet.h in Headers */ = {isa = PBXBuildFile; fileRef = A249F03FE31EF76F157AC943 /* SYMBindingSet.h */; };
+		A249F0D470BE99BBCD2A98D8 /* SYMForwardDataThroughSegueResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = A249F3C6EEB404DC072B5F34 /* SYMForwardDataThroughSegueResponder.m */; };
+		A249F0DC3A9A6094D5BAC504 /* SYMDeselectCellResponder.h in Headers */ = {isa = PBXBuildFile; fileRef = A249F7CF38FACD8376851ABA /* SYMDeselectCellResponder.h */; };
+		A249F0EA8C36A2A37962FB58 /* UITableView+SymbiOSis.h in Headers */ = {isa = PBXBuildFile; fileRef = A249FD521110B2C446417521 /* UITableView+SymbiOSis.h */; };
+		A249F12EB4BFE38455E7905E /* SYMBindingSet.m in Sources */ = {isa = PBXBuildFile; fileRef = A249F476CCB97B0075A34309 /* SYMBindingSet.m */; };
+		A249F13163C9069E93B74FB1 /* SYMTableViewBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = A249FC231C495A0B1D2CF53E /* SYMTableViewBinding.m */; };
+		A249F15D8B619237B0F26C61 /* SYMActionResponder.h in Headers */ = {isa = PBXBuildFile; fileRef = A249F955279CCC06624F1DAA /* SYMActionResponder.h */; };
+		A249F1760B8939F8CA2266DC /* SYMPickerViewSelectionResponder.h in Headers */ = {isa = PBXBuildFile; fileRef = A249F676B1E7EA115D95BED9 /* SYMPickerViewSelectionResponder.h */; };
+		A249F20C332A8AF4CA62D0BD /* UITableView+SymbiOSis.m in Sources */ = {isa = PBXBuildFile; fileRef = A249FB2B67185DE10895BD33 /* UITableView+SymbiOSis.m */; };
+		A249F246E4B02BCCCE6EA893 /* SYMPickerViewBinding.h in Headers */ = {isa = PBXBuildFile; fileRef = A249FE6D3276379EB28B6016 /* SYMPickerViewBinding.h */; };
+		A249F2E9FDA69F094AF0A923 /* SYMResponder.h in Headers */ = {isa = PBXBuildFile; fileRef = A249FCB170A65B3D95B09D18 /* SYMResponder.h */; };
+		A249F32A86067F966A106E1E /* SymbiOSis.h in Headers */ = {isa = PBXBuildFile; fileRef = A249F1523D5FA2DA1D57B8F8 /* SymbiOSis.h */; };
+		A249F36997FF4C90BA35CE97 /* UICollectionView+SymbiOSis.m in Sources */ = {isa = PBXBuildFile; fileRef = A249F5EDAFCB8A69FE150826 /* UICollectionView+SymbiOSis.m */; };
+		A249F36D41EB1F6067326B01 /* SYMTableViewCellSelectionResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = A249F50A91BE7C6555C13944 /* SYMTableViewCellSelectionResponder.m */; };
+		A249F3A94B65F48FD7C57149 /* SYMButtonBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = A249FDEA2D37C0CE7E194949 /* SYMButtonBinding.m */; };
+		A249F43E5104F6F8C6A1642C /* SYMDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A249F9422B235E47AA5DBC92 /* SYMDataSource.m */; };
+		A249F45A59707630349E79B1 /* SYMResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = A249F339674D5451636C8AA2 /* SYMResponder.m */; };
+		A249F4F439F2DC7A8590E957 /* SYMSegueHandlerProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = A249FDBDF5BCF4146812D5B0 /* SYMSegueHandlerProtocol.h */; };
+		A249F510CEEA53E2D80E39BC /* SYMDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = A249F79D798913D66F63B857 /* SYMDataSource.h */; };
+		A249F55F785238DB46093458 /* SYMForwardDataThroughSegueResponder.h in Headers */ = {isa = PBXBuildFile; fileRef = A249F67CCDEFDF5D66A9A5B3 /* SYMForwardDataThroughSegueResponder.h */; };
+		A249F57871064114A67C13AC /* SYMLabelBinding.h in Headers */ = {isa = PBXBuildFile; fileRef = A249FCC6021D33E1CB6F1229 /* SYMLabelBinding.h */; };
+		A249F5B97DAA90CE9412E09C /* SYMViewBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = A249F35D0D11066779C028D2 /* SYMViewBinding.m */; };
+		A249F624E1B5C9440FC2413F /* SYMBinding.h in Headers */ = {isa = PBXBuildFile; fileRef = A249F6D7A5DA1E9ABE741568 /* SYMBinding.h */; };
+		A249F69812E29D1D8A2755DA /* UICollectionView+SymbiOSis.h in Headers */ = {isa = PBXBuildFile; fileRef = A249FC70B1F23F20042BD020 /* UICollectionView+SymbiOSis.h */; };
+		A249F72218C5F5978EC395CC /* SYMDeselectCellResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = A249F43B6794FEE1EEBD9386 /* SYMDeselectCellResponder.m */; };
+		A249F789CE6A5267E1E9BBE0 /* SYMBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = A249FB7ABF11252B5DF65B36 /* SYMBinding.m */; };
+		A249F82A6817E4594D1053B4 /* SYMViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A249FE21E4C2542A526F420C /* SYMViewController.h */; };
+		A249F861A8CE6129D20B546C /* SYMButtonBinding.h in Headers */ = {isa = PBXBuildFile; fileRef = A249F1F459334CEEDBDFF332 /* SYMButtonBinding.h */; };
+		A249F8A198B3453415B29E84 /* SYMKeyPathLabelBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = A249F279E0DB9AC421E2575B /* SYMKeyPathLabelBinding.m */; };
+		A249F8E12D2DD0A7A0E5EE46 /* UINavigationController+SymbiOSis.h in Headers */ = {isa = PBXBuildFile; fileRef = A249FD319502668A8FC16F54 /* UINavigationController+SymbiOSis.h */; };
+		A249F928E676CF747915551F /* SYMTableViewCellSelectionResponder.h in Headers */ = {isa = PBXBuildFile; fileRef = A249F4EA6308CFE8C0BA6B7E /* SYMTableViewCellSelectionResponder.h */; };
+		A249F9F00A5EFE10FB404D10 /* UICollectionViewCell+SymbiOSis.h in Headers */ = {isa = PBXBuildFile; fileRef = A249F7748317E9768A7FB81F /* UICollectionViewCell+SymbiOSis.h */; };
+		A249FA48CBFCBE6D8072A92B /* SYMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A249F75B2FF4BA1A51D27C27 /* SYMViewController.m */; };
+		A249FA8C2DF1495F3516708C /* SYMDismissKeyboardResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = A249FE2FEE23C7077CEE4454 /* SYMDismissKeyboardResponder.m */; };
+		A249FAD0BB7D5E7BE8BF0965 /* SYMImageBinding.h in Headers */ = {isa = PBXBuildFile; fileRef = A249FFFFD0A96F73DA57B79B /* SYMImageBinding.h */; };
+		A249FB03F306BD818551C6D6 /* SYMTableViewBinding.h in Headers */ = {isa = PBXBuildFile; fileRef = A249F06AE9F254B5D8A7CCC9 /* SYMTableViewBinding.h */; };
+		A249FB158129ECC73F3434C9 /* SYMDismissViewControllerResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = A249F32992D6647C0F22058F /* SYMDismissViewControllerResponder.m */; };
+		A249FB4B5E6F3550263A7E70 /* SYMKeyPathLabelBinding.h in Headers */ = {isa = PBXBuildFile; fileRef = A249F2567834B2CF7A872F3D /* SYMKeyPathLabelBinding.h */; };
+		A249FBDD186EE07FE2D7176F /* SYMPickerViewBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = A249FC6E5D6F1C96755F5547 /* SYMPickerViewBinding.m */; };
+		A249FC19FD58B8DD434D1DCA /* SYMImageBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = A249F4EE35B74358191116A1 /* SYMImageBinding.m */; };
+		A249FC410D34D17E9F78D6B4 /* SYMMoveToNextControlTextFieldResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = A249F0CBC095ED337D7D0D55 /* SYMMoveToNextControlTextFieldResponder.m */; };
+		A249FCA92B545B0ED0C53903 /* SYMDismissKeyboardResponder.h in Headers */ = {isa = PBXBuildFile; fileRef = A249F8DF483B227A5CE89D1E /* SYMDismissKeyboardResponder.h */; };
+		A249FCC9436D4CA12FC2D892 /* SYMActionResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = A249FF9FA10BDEF1F6C66601 /* SYMActionResponder.m */; };
+		A249FCD73FCAB75D466088A9 /* SYMMoveToNextControlTextFieldResponder.h in Headers */ = {isa = PBXBuildFile; fileRef = A249FF39C44A5F37824EC4A3 /* SYMMoveToNextControlTextFieldResponder.h */; };
+		A249FD48D1B6063B62024582 /* SYMLabelBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = A249F97B89FE7DE27CC9CEBA /* SYMLabelBinding.m */; };
+		A249FD48E9DFBDCA8B594504 /* SYMDataProviderProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = A249FD556BEC4E4C722EA692 /* SYMDataProviderProtocol.h */; };
+		A249FD6577FF7E5414F0A8E3 /* SYMDismissViewControllerResponder.h in Headers */ = {isa = PBXBuildFile; fileRef = A249F8077763FB41CB81F072 /* SYMDismissViewControllerResponder.h */; };
+		A249FEB7200CDC451C591697 /* UINavigationController+SymbiOSis.m in Sources */ = {isa = PBXBuildFile; fileRef = A249F2DA0E43D11F9E5ED767 /* UINavigationController+SymbiOSis.m */; };
+		A249FED260BF1D1A45BBBDC0 /* UICollectionViewCell+SymbiOSis.m in Sources */ = {isa = PBXBuildFile; fileRef = A249F5BC2082952195913E06 /* UICollectionViewCell+SymbiOSis.m */; };
+		A249FED8FB2DA3EFDFE442B6 /* SYMViewBinding.h in Headers */ = {isa = PBXBuildFile; fileRef = A249FF0553996922DCCCFBD0 /* SYMViewBinding.h */; };
+		A249FF4DBAFF4797C2CD3734 /* UITableViewCell+SymbiOSis.m in Sources */ = {isa = PBXBuildFile; fileRef = A249F7111DD1B44D1750D40A /* UITableViewCell+SymbiOSis.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6C0B539580B86AE902D4283B /* UIView+SymbiOSisPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SymbiOSisPrivate.h"; sourceTree = "<group>"; };
+		6C0B5F238F17550A664C891A /* UIView+SymbiOSisPrivate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SymbiOSisPrivate.m"; sourceTree = "<group>"; };
+		A249F03FE31EF76F157AC943 /* SYMBindingSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMBindingSet.h; sourceTree = "<group>"; };
+		A249F06AE9F254B5D8A7CCC9 /* SYMTableViewBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMTableViewBinding.h; sourceTree = "<group>"; };
+		A249F0B09F65CF9160890A20 /* SYMPickerViewSelectionResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMPickerViewSelectionResponder.m; sourceTree = "<group>"; };
+		A249F0CBC095ED337D7D0D55 /* SYMMoveToNextControlTextFieldResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMMoveToNextControlTextFieldResponder.m; sourceTree = "<group>"; };
+		A249F1523D5FA2DA1D57B8F8 /* SymbiOSis.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SymbiOSis.h; sourceTree = "<group>"; };
+		A249F1F459334CEEDBDFF332 /* SYMButtonBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMButtonBinding.h; sourceTree = "<group>"; };
+		A249F2567834B2CF7A872F3D /* SYMKeyPathLabelBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMKeyPathLabelBinding.h; sourceTree = "<group>"; };
+		A249F279E0DB9AC421E2575B /* SYMKeyPathLabelBinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMKeyPathLabelBinding.m; sourceTree = "<group>"; };
+		A249F2DA0E43D11F9E5ED767 /* UINavigationController+SymbiOSis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+SymbiOSis.m"; sourceTree = "<group>"; };
+		A249F32992D6647C0F22058F /* SYMDismissViewControllerResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMDismissViewControllerResponder.m; sourceTree = "<group>"; };
+		A249F339674D5451636C8AA2 /* SYMResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMResponder.m; sourceTree = "<group>"; };
+		A249F35D0D11066779C028D2 /* SYMViewBinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMViewBinding.m; sourceTree = "<group>"; };
+		A249F3C6EEB404DC072B5F34 /* SYMForwardDataThroughSegueResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMForwardDataThroughSegueResponder.m; sourceTree = "<group>"; };
+		A249F415899D032098EA5EBD /* SYMDataSourcesOwner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMDataSourcesOwner.h; sourceTree = "<group>"; };
+		A249F43B6794FEE1EEBD9386 /* SYMDeselectCellResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMDeselectCellResponder.m; sourceTree = "<group>"; };
+		A249F476CCB97B0075A34309 /* SYMBindingSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMBindingSet.m; sourceTree = "<group>"; };
+		A249F4EA6308CFE8C0BA6B7E /* SYMTableViewCellSelectionResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMTableViewCellSelectionResponder.h; sourceTree = "<group>"; };
+		A249F4EE35B74358191116A1 /* SYMImageBinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMImageBinding.m; sourceTree = "<group>"; };
+		A249F50A91BE7C6555C13944 /* SYMTableViewCellSelectionResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMTableViewCellSelectionResponder.m; sourceTree = "<group>"; };
+		A249F5BC2082952195913E06 /* UICollectionViewCell+SymbiOSis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionViewCell+SymbiOSis.m"; sourceTree = "<group>"; };
+		A249F5DCFAAF6554695830D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		A249F5EDAFCB8A69FE150826 /* UICollectionView+SymbiOSis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+SymbiOSis.m"; sourceTree = "<group>"; };
+		A249F676B1E7EA115D95BED9 /* SYMPickerViewSelectionResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMPickerViewSelectionResponder.h; sourceTree = "<group>"; };
+		A249F67CCDEFDF5D66A9A5B3 /* SYMForwardDataThroughSegueResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMForwardDataThroughSegueResponder.h; sourceTree = "<group>"; };
+		A249F6BDC682C2D78E7E2ED6 /* SymbiOSis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SymbiOSis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A249F6D7A5DA1E9ABE741568 /* SYMBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMBinding.h; sourceTree = "<group>"; };
+		A249F7111DD1B44D1750D40A /* UITableViewCell+SymbiOSis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+SymbiOSis.m"; sourceTree = "<group>"; };
+		A249F75B2FF4BA1A51D27C27 /* SYMViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMViewController.m; sourceTree = "<group>"; };
+		A249F7748317E9768A7FB81F /* UICollectionViewCell+SymbiOSis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionViewCell+SymbiOSis.h"; sourceTree = "<group>"; };
+		A249F79D798913D66F63B857 /* SYMDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMDataSource.h; sourceTree = "<group>"; };
+		A249F7CF38FACD8376851ABA /* SYMDeselectCellResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMDeselectCellResponder.h; sourceTree = "<group>"; };
+		A249F8077763FB41CB81F072 /* SYMDismissViewControllerResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMDismissViewControllerResponder.h; sourceTree = "<group>"; };
+		A249F8DF483B227A5CE89D1E /* SYMDismissKeyboardResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMDismissKeyboardResponder.h; sourceTree = "<group>"; };
+		A249F9422B235E47AA5DBC92 /* SYMDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMDataSource.m; sourceTree = "<group>"; };
+		A249F955279CCC06624F1DAA /* SYMActionResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMActionResponder.h; sourceTree = "<group>"; };
+		A249F97B89FE7DE27CC9CEBA /* SYMLabelBinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMLabelBinding.m; sourceTree = "<group>"; };
+		A249FB2B67185DE10895BD33 /* UITableView+SymbiOSis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+SymbiOSis.m"; sourceTree = "<group>"; };
+		A249FB7ABF11252B5DF65B36 /* SYMBinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMBinding.m; sourceTree = "<group>"; };
+		A249FC231C495A0B1D2CF53E /* SYMTableViewBinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMTableViewBinding.m; sourceTree = "<group>"; };
+		A249FC6E5D6F1C96755F5547 /* SYMPickerViewBinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMPickerViewBinding.m; sourceTree = "<group>"; };
+		A249FC70B1F23F20042BD020 /* UICollectionView+SymbiOSis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+SymbiOSis.h"; sourceTree = "<group>"; };
+		A249FCB170A65B3D95B09D18 /* SYMResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMResponder.h; sourceTree = "<group>"; };
+		A249FCC6021D33E1CB6F1229 /* SYMLabelBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMLabelBinding.h; sourceTree = "<group>"; };
+		A249FD319502668A8FC16F54 /* UINavigationController+SymbiOSis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+SymbiOSis.h"; sourceTree = "<group>"; };
+		A249FD521110B2C446417521 /* UITableView+SymbiOSis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+SymbiOSis.h"; sourceTree = "<group>"; };
+		A249FD556BEC4E4C722EA692 /* SYMDataProviderProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMDataProviderProtocol.h; sourceTree = "<group>"; };
+		A249FDBDF5BCF4146812D5B0 /* SYMSegueHandlerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMSegueHandlerProtocol.h; sourceTree = "<group>"; };
+		A249FDEA2D37C0CE7E194949 /* SYMButtonBinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMButtonBinding.m; sourceTree = "<group>"; };
+		A249FE21E4C2542A526F420C /* SYMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMViewController.h; sourceTree = "<group>"; };
+		A249FE2FEE23C7077CEE4454 /* SYMDismissKeyboardResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMDismissKeyboardResponder.m; sourceTree = "<group>"; };
+		A249FE6D3276379EB28B6016 /* SYMPickerViewBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMPickerViewBinding.h; sourceTree = "<group>"; };
+		A249FF0553996922DCCCFBD0 /* SYMViewBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMViewBinding.h; sourceTree = "<group>"; };
+		A249FF39C44A5F37824EC4A3 /* SYMMoveToNextControlTextFieldResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMMoveToNextControlTextFieldResponder.h; sourceTree = "<group>"; };
+		A249FF4A0CDAC40952D476EA /* UITableViewCell+SymbiOSis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+SymbiOSis.h"; sourceTree = "<group>"; };
+		A249FF9FA10BDEF1F6C66601 /* SYMActionResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMActionResponder.m; sourceTree = "<group>"; };
+		A249FFFFD0A96F73DA57B79B /* SYMImageBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMImageBinding.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A249F5C05DB2F656417CFBC1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6C0B59117E6A2A9169290F8E /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				6C0B5F238F17550A664C891A /* UIView+SymbiOSisPrivate.m */,
+				6C0B539580B86AE902D4283B /* UIView+SymbiOSisPrivate.h */,
+			);
+			path = Private;
+			sourceTree = "<group>";
+		};
+		A249F392C16C4FDB457CBC5D = {
+			isa = PBXGroup;
+			children = (
+				A249F3FD25F37A1C89B32D98 /* Products */,
+				A249FA4D30D42CEBEA355D09 /* SymbiOSis */,
+			);
+			sourceTree = "<group>";
+		};
+		A249F3DB79062269E187D742 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A249F5DCFAAF6554695830D5 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A249F3FD25F37A1C89B32D98 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A249F6BDC682C2D78E7E2ED6 /* SymbiOSis.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A249F9FDA1987761C3BDD89E /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				A249F955279CCC06624F1DAA /* SYMActionResponder.h */,
+				A249FF9FA10BDEF1F6C66601 /* SYMActionResponder.m */,
+				A249F476CCB97B0075A34309 /* SYMBindingSet.m */,
+				A249FF4A0CDAC40952D476EA /* UITableViewCell+SymbiOSis.h */,
+				A249F7748317E9768A7FB81F /* UICollectionViewCell+SymbiOSis.h */,
+				A249F2DA0E43D11F9E5ED767 /* UINavigationController+SymbiOSis.m */,
+				A249F03FE31EF76F157AC943 /* SYMBindingSet.h */,
+				A249F75B2FF4BA1A51D27C27 /* SYMViewController.m */,
+				A249F50A91BE7C6555C13944 /* SYMTableViewCellSelectionResponder.m */,
+				A249FB7ABF11252B5DF65B36 /* SYMBinding.m */,
+				A249FB2B67185DE10895BD33 /* UITableView+SymbiOSis.m */,
+				A249FC70B1F23F20042BD020 /* UICollectionView+SymbiOSis.h */,
+				A249F79D798913D66F63B857 /* SYMDataSource.h */,
+				A249F9422B235E47AA5DBC92 /* SYMDataSource.m */,
+				A249FD521110B2C446417521 /* UITableView+SymbiOSis.h */,
+				A249F4EA6308CFE8C0BA6B7E /* SYMTableViewCellSelectionResponder.h */,
+				A249F5EDAFCB8A69FE150826 /* UICollectionView+SymbiOSis.m */,
+				A249FE21E4C2542A526F420C /* SYMViewController.h */,
+				A249FDBDF5BCF4146812D5B0 /* SYMSegueHandlerProtocol.h */,
+				A249FCB170A65B3D95B09D18 /* SYMResponder.h */,
+				A249F6D7A5DA1E9ABE741568 /* SYMBinding.h */,
+				A249F5BC2082952195913E06 /* UICollectionViewCell+SymbiOSis.m */,
+				A249F7111DD1B44D1750D40A /* UITableViewCell+SymbiOSis.m */,
+				A249F339674D5451636C8AA2 /* SYMResponder.m */,
+				A249FD556BEC4E4C722EA692 /* SYMDataProviderProtocol.h */,
+				A249FD319502668A8FC16F54 /* UINavigationController+SymbiOSis.h */,
+				A249F415899D032098EA5EBD /* SYMDataSourcesOwner.h */,
+				A249F676B1E7EA115D95BED9 /* SYMPickerViewSelectionResponder.h */,
+				A249F0B09F65CF9160890A20 /* SYMPickerViewSelectionResponder.m */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		A249FA4D30D42CEBEA355D09 /* SymbiOSis */ = {
+			isa = PBXGroup;
+			children = (
+				A249F3DB79062269E187D742 /* Supporting Files */,
+				A249F1523D5FA2DA1D57B8F8 /* SymbiOSis.h */,
+				A249F9FDA1987761C3BDD89E /* Core */,
+				A249FEAB6BB77D816577F786 /* Bindings */,
+				A249FB81A4C0C78343BD8037 /* Responders */,
+				6C0B59117E6A2A9169290F8E /* Private */,
+			);
+			path = SymbiOSis;
+			sourceTree = "<group>";
+		};
+		A249FB81A4C0C78343BD8037 /* Responders */ = {
+			isa = PBXGroup;
+			children = (
+				A249F3C6EEB404DC072B5F34 /* SYMForwardDataThroughSegueResponder.m */,
+				A249F43B6794FEE1EEBD9386 /* SYMDeselectCellResponder.m */,
+				A249F0CBC095ED337D7D0D55 /* SYMMoveToNextControlTextFieldResponder.m */,
+				A249F67CCDEFDF5D66A9A5B3 /* SYMForwardDataThroughSegueResponder.h */,
+				A249F7CF38FACD8376851ABA /* SYMDeselectCellResponder.h */,
+				A249FF39C44A5F37824EC4A3 /* SYMMoveToNextControlTextFieldResponder.h */,
+				A249F8DF483B227A5CE89D1E /* SYMDismissKeyboardResponder.h */,
+				A249F32992D6647C0F22058F /* SYMDismissViewControllerResponder.m */,
+				A249F8077763FB41CB81F072 /* SYMDismissViewControllerResponder.h */,
+				A249FE2FEE23C7077CEE4454 /* SYMDismissKeyboardResponder.m */,
+			);
+			path = Responders;
+			sourceTree = "<group>";
+		};
+		A249FEAB6BB77D816577F786 /* Bindings */ = {
+			isa = PBXGroup;
+			children = (
+				A249FCC6021D33E1CB6F1229 /* SYMLabelBinding.h */,
+				A249FFFFD0A96F73DA57B79B /* SYMImageBinding.h */,
+				A249FDEA2D37C0CE7E194949 /* SYMButtonBinding.m */,
+				A249F06AE9F254B5D8A7CCC9 /* SYMTableViewBinding.h */,
+				A249F279E0DB9AC421E2575B /* SYMKeyPathLabelBinding.m */,
+				A249F97B89FE7DE27CC9CEBA /* SYMLabelBinding.m */,
+				A249FC6E5D6F1C96755F5547 /* SYMPickerViewBinding.m */,
+				A249F4EE35B74358191116A1 /* SYMImageBinding.m */,
+				A249FE6D3276379EB28B6016 /* SYMPickerViewBinding.h */,
+				A249F2567834B2CF7A872F3D /* SYMKeyPathLabelBinding.h */,
+				A249F1F459334CEEDBDFF332 /* SYMButtonBinding.h */,
+				A249FC231C495A0B1D2CF53E /* SYMTableViewBinding.m */,
+				A249F35D0D11066779C028D2 /* SYMViewBinding.m */,
+				A249FF0553996922DCCCFBD0 /* SYMViewBinding.h */,
+			);
+			path = Bindings;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		A249FC943CD7E96FA8FD60D6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A249F32A86067F966A106E1E /* SymbiOSis.h in Headers */,
+				A249F57871064114A67C13AC /* SYMLabelBinding.h in Headers */,
+				A249FAD0BB7D5E7BE8BF0965 /* SYMImageBinding.h in Headers */,
+				A249FB03F306BD818551C6D6 /* SYMTableViewBinding.h in Headers */,
+				A249F246E4B02BCCCE6EA893 /* SYMPickerViewBinding.h in Headers */,
+				A249FB4B5E6F3550263A7E70 /* SYMKeyPathLabelBinding.h in Headers */,
+				A249F861A8CE6129D20B546C /* SYMButtonBinding.h in Headers */,
+				A249FED8FB2DA3EFDFE442B6 /* SYMViewBinding.h in Headers */,
+				A249F15D8B619237B0F26C61 /* SYMActionResponder.h in Headers */,
+				A249F064AA0188B8750E7105 /* UITableViewCell+SymbiOSis.h in Headers */,
+				A249F9F00A5EFE10FB404D10 /* UICollectionViewCell+SymbiOSis.h in Headers */,
+				A249F08F8C16D0252CE9ECCB /* SYMBindingSet.h in Headers */,
+				A249F69812E29D1D8A2755DA /* UICollectionView+SymbiOSis.h in Headers */,
+				A249F510CEEA53E2D80E39BC /* SYMDataSource.h in Headers */,
+				A249F0EA8C36A2A37962FB58 /* UITableView+SymbiOSis.h in Headers */,
+				A249F928E676CF747915551F /* SYMTableViewCellSelectionResponder.h in Headers */,
+				A249F82A6817E4594D1053B4 /* SYMViewController.h in Headers */,
+				A249F4F439F2DC7A8590E957 /* SYMSegueHandlerProtocol.h in Headers */,
+				A249F2E9FDA69F094AF0A923 /* SYMResponder.h in Headers */,
+				A249F624E1B5C9440FC2413F /* SYMBinding.h in Headers */,
+				A249FD48E9DFBDCA8B594504 /* SYMDataProviderProtocol.h in Headers */,
+				A249F8E12D2DD0A7A0E5EE46 /* UINavigationController+SymbiOSis.h in Headers */,
+				A249F55F785238DB46093458 /* SYMForwardDataThroughSegueResponder.h in Headers */,
+				A249F0DC3A9A6094D5BAC504 /* SYMDeselectCellResponder.h in Headers */,
+				A249FCD73FCAB75D466088A9 /* SYMMoveToNextControlTextFieldResponder.h in Headers */,
+				A249FCA92B545B0ED0C53903 /* SYMDismissKeyboardResponder.h in Headers */,
+				A249FD6577FF7E5414F0A8E3 /* SYMDismissViewControllerResponder.h in Headers */,
+				A249F029BB98C321197C0304 /* SYMDataSourcesOwner.h in Headers */,
+				A249F1760B8939F8CA2266DC /* SYMPickerViewSelectionResponder.h in Headers */,
+				6C0B5F4B08202A116126182A /* UIView+SymbiOSisPrivate.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		A249F5D3EDBDF812545339A9 /* SymbiOSis */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A249FB64B03F5DDE2A716695 /* Build configuration list for PBXNativeTarget "SymbiOSis" */;
+			buildPhases = (
+				A249F08AF2E9289CF1634BC5 /* Sources */,
+				A249F5C05DB2F656417CFBC1 /* Frameworks */,
+				A249FC943CD7E96FA8FD60D6 /* Headers */,
+				A249F65212B0EE34ECF73A59 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SymbiOSis;
+			productName = SymbiOSis;
+			productReference = A249F6BDC682C2D78E7E2ED6 /* SymbiOSis.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A249F6A841107F79DF12C791 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SYM;
+				ORGANIZATIONNAME = "Dan Hall";
+			};
+			buildConfigurationList = A249F04B02C8A6FDDF25D735 /* Build configuration list for PBXProject "SymbiOSis" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A249F392C16C4FDB457CBC5D;
+			productRefGroup = A249F3FD25F37A1C89B32D98 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A249F5D3EDBDF812545339A9 /* SymbiOSis */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A249F65212B0EE34ECF73A59 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A249F08AF2E9289CF1634BC5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A249F3A94B65F48FD7C57149 /* SYMButtonBinding.m in Sources */,
+				A249F8A198B3453415B29E84 /* SYMKeyPathLabelBinding.m in Sources */,
+				A249FD48D1B6063B62024582 /* SYMLabelBinding.m in Sources */,
+				A249FBDD186EE07FE2D7176F /* SYMPickerViewBinding.m in Sources */,
+				A249FC19FD58B8DD434D1DCA /* SYMImageBinding.m in Sources */,
+				A249F13163C9069E93B74FB1 /* SYMTableViewBinding.m in Sources */,
+				A249F5B97DAA90CE9412E09C /* SYMViewBinding.m in Sources */,
+				A249FCC9436D4CA12FC2D892 /* SYMActionResponder.m in Sources */,
+				A249F12EB4BFE38455E7905E /* SYMBindingSet.m in Sources */,
+				A249FEB7200CDC451C591697 /* UINavigationController+SymbiOSis.m in Sources */,
+				A249FA48CBFCBE6D8072A92B /* SYMViewController.m in Sources */,
+				A249F36D41EB1F6067326B01 /* SYMTableViewCellSelectionResponder.m in Sources */,
+				A249F789CE6A5267E1E9BBE0 /* SYMBinding.m in Sources */,
+				A249F20C332A8AF4CA62D0BD /* UITableView+SymbiOSis.m in Sources */,
+				A249F43E5104F6F8C6A1642C /* SYMDataSource.m in Sources */,
+				A249F36997FF4C90BA35CE97 /* UICollectionView+SymbiOSis.m in Sources */,
+				A249FED260BF1D1A45BBBDC0 /* UICollectionViewCell+SymbiOSis.m in Sources */,
+				A249FF4DBAFF4797C2CD3734 /* UITableViewCell+SymbiOSis.m in Sources */,
+				A249F45A59707630349E79B1 /* SYMResponder.m in Sources */,
+				A249F0D470BE99BBCD2A98D8 /* SYMForwardDataThroughSegueResponder.m in Sources */,
+				A249F72218C5F5978EC395CC /* SYMDeselectCellResponder.m in Sources */,
+				A249FC410D34D17E9F78D6B4 /* SYMMoveToNextControlTextFieldResponder.m in Sources */,
+				A249FB158129ECC73F3434C9 /* SYMDismissViewControllerResponder.m in Sources */,
+				A249FA8C2DF1495F3516708C /* SYMDismissKeyboardResponder.m in Sources */,
+				A249F07C5CB9B5D546D53DA2 /* SYMPickerViewSelectionResponder.m in Sources */,
+				6C0B5E67B9DB6BF0C6513252 /* UIView+SymbiOSisPrivate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A249F3543C76821264BC236F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SymbiOSis/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		A249F575A056F626B116300C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SymbiOSis/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		A249FBA8D749F4B22CF86DFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				CURRENT_PROJECT_VERSION = 0.2.0;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A249FBC5128243BE05DEE9C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 0.2.0;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A249F04B02C8A6FDDF25D735 /* Build configuration list for PBXProject "SymbiOSis" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A249FBC5128243BE05DEE9C4 /* Debug */,
+				A249FBA8D749F4B22CF86DFF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A249FB64B03F5DDE2A716695 /* Build configuration list for PBXNativeTarget "SymbiOSis" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A249F3543C76821264BC236F /* Debug */,
+				A249F575A056F626B116300C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A249F6A841107F79DF12C791 /* Project object */;
+}
