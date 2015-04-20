@@ -11,5 +11,6 @@ Download the .zip for this repo and add the entire "SymbiOSis" folder and all su
 More documentation is coming soon!  For now, the code is fully documented in the header files, or here:
 http://cocoadocs.org/docsets/SymbiOSis
 
-For a full example project that shows how to use, download the latest from this repo:  https://github.com/daniel-hall/SymbiOSisDemoApp
+For a full example project that shows how to use, download the latest from this repo:  
+https://github.com/daniel-hall/SymbiOSisDemoApp
 
