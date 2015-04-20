@@ -126,7 +126,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSArray *arrayOfIdentifiers = [self.cellReuseIdentifiers componentsSeparatedByString:@","];
     // If there aren't identifiers provided for every section, just use the first one for all
-    NSInteger section = section < arrayOfIdentifiers.count ? section : 0;
+    NSInteger section = indexPath.section < arrayOfIdentifiers.count ? indexPath.section : 0;
     return [tableView dequeueReusableCellWithIdentifier:arrayOfIdentifiers[section] andDataSourceIndexPath:indexPath];
 }
 
