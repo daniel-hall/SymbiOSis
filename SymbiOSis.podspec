@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '7.0'
   s.requires_arc = true
 
-  s.source_files = 'SymbiOSis/SymbiOSis.h', 'SymbiOSis/Core/*', 'SymbiOSis/Bindings/*', 'SymbiOSis/Responders/*', 'SymbiOSis/DataSources/*', 'SymbiOSis/Private/*', 'SymbiOSis/Views/*’
-  s.public_header_files = 'SymbiOSis/SymbiOSis.h', 'SymbiOSis/Core/*.h', 'SymbiOSis/Bindings/*.h', 'SymbiOSis/Responders/*.h', 'SymbiOSis/DataSources/*.h', 'SymbiOSis/Views/*.h’
+  s.source_files = 'SymbiOSis/SymbiOSis.h', 'SymbiOSis/Core/*', 'SymbiOSis/Bindings/*', 'SymbiOSis/Responders/*', 'SymbiOSis/DataSources/*', 'SymbiOSis/Private/*', 'SymbiOSis/Views/*'
+  s.public_header_files = 'SymbiOSis/SymbiOSis.h', 'SymbiOSis/Core/*.h', 'SymbiOSis/Bindings/*.h', 'SymbiOSis/Responders/*.h', 'SymbiOSis/DataSources/*.h', 'SymbiOSis/Views/*.h'
   s.frameworks = 'UIKit'
 end
