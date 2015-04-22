@@ -32,7 +32,7 @@
 /** Behaves identically to the standard dequeueReusableCellWithReuseIdentifier:forIndexPath: method on a UICollectionView, with the addition of an extra parameter that sets the index that bindings inside the cell should use for retrieving their specific value from the data source 
 * @param identifier Same as in [UICollectionView dequeueReusableCellWithReuseIdentifier:forIndexPath:] method
 * @param indexPath Same as in [UICollectionView dequeueReusableCellWithReuseIdentifier:forIndexPath:] method
-* @param dataSourceIndex The index that should be used to retrieve this cell's value from the data source.  This isn't always the same as the indexPath.row or indexPath.item.  For example, in a collection view that some header cells that appear before the main content cells, the dataSourceIndex for the main content cells would be their indexPath.item - the number of header cells.
+* @param dataSourceIndexPath The index path that should be used to retrieve this cell's value from the data source.
 * @return a UICollectionViewCell or subclass.
 */
 -(id)dequeueReusableCellWithReuseIdentifier:(NSString *)identifier forIndexPath:(NSIndexPath *)indexPath withDataSourceIndexPath:(NSIndexPath *)dataSourceIndexPath;

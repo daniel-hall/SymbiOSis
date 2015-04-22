@@ -29,7 +29,7 @@
 /** Abstract superclass for all bindings that will update UIViews */
 @interface SYMViewBinding : SYMBinding
 
-/** Override and retype of the superclass's view property to specify it is as an IBOutlet for connecting inside a storyboard. */
-@property (nonatomic, weak) IBOutlet UILabel *view;
+/** Redeclare and retype the superclass's views property to make it an outlet collection of UIViews */
+@property (nonatomic, strong) IBOutletCollection(UIView) NSArray *views;
 
 @end

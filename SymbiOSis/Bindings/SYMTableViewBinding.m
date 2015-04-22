@@ -32,7 +32,7 @@
 @implementation SYMTableViewBinding
 
 @dynamic value;
-@dynamic view;
+@dynamic views;
 @synthesize sourceValue = _sourceValue;
 
 
@@ -53,12 +53,9 @@
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     [super setValue:self.dataSource.value];
-    [self update];
-}
-
-
--(void)update {
-    [self.view reloadData];
+    for (UITableView *view in self.views) {
+        [self updateView:view];
+    }
 }
 
 
@@ -134,7 +131,7 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     if (section < self.headerViews.count) {
         UIView *headerView = [self.headerViews[section] copy];
-        headerView.frame = CGRectMake(0, 0, self.view.frame.size.width, headerView.frame.size.height);
+        headerView.frame = CGRectMake(0, 0, tableView.frame.size.width, headerView.frame.size.height);
         [headerView layoutSubviews];
         return headerView;
     }
@@ -145,7 +142,7 @@
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
     if (section < self.footerViews.count) {
         UIView *footerView = [self.footerViews[section] copy];
-        footerView.frame = CGRectMake(0, 0, self.view.frame.size.width, footerView.frame.size.height);
+        footerView.frame = CGRectMake(0, 0, tableView.frame.size.width, footerView.frame.size.height);
         [footerView layoutSubviews];
         return footerView;
     }
@@ -176,11 +173,15 @@
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     id value = [self.dataSource valueForIndexPath:indexPath];
     for (SYMTableViewCellSelectionResponder *responder in self.cellSelectionResponders) {
-        [responder tableView:self.view selectedCell:cell atIndexPath:indexPath withValue:value];
+        [responder tableView:tableView selectedCell:cell atIndexPath:indexPath withValue:value];
     }
     self.sourceValue = value;
 }
 
+
+- (void)updateView:(UITableView *)view {
+    [view reloadData];
+}
 
 - (void)dealloc {
     [self.dataSource removeObserver:self forKeyPath:NSStringFromSelector(@selector(value))];

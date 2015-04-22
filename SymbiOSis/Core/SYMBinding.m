@@ -39,10 +39,10 @@
 
 
 -(void)awakeFromNib {
-    [self bindView:self.view toDataSource:self.dataSource];
+    [self bindViews:self.views toDataSource:self.dataSource];
 }
 
--(void)bindView:(UIView *)view toDataSource:(SYMDataSource *)dataSource {
+-(void)bindViews:(NSArray *)views toDataSource:(SYMDataSource *)dataSource {
     // The below silliness exists because bindings have to subclass UIView in order to be added to prototype cells, but we don't want them visible
     self.frame = CGRectZero;
     self.backgroundColor = [UIColor clearColor];
@@ -53,7 +53,7 @@
 
     [self setup];
     self.dataSource = dataSource;
-    self.view = view;
+    self.views = views;
 
     if (self.dataSource) {
         [self.dataSource addObserver:self forKeyPath:NSStringFromSelector(@selector(value)) options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew context:nil];
@@ -70,11 +70,13 @@
 
     // Otherwise ask the data source for the value corresponding with our data source index (if the data source isn't an array, it will simply return its value)
     self.value = [self.dataSource valueForIndexPath:self.dataSourceIndexPath];
-    [self update];
+    for (UIView *view in self.views) {
+        [self updateView:view];
+    }
 }
 
 
--(void)update {
+-(void)updateView:(UIView *)view {
     //override in subclasses
 }
 
@@ -85,7 +87,9 @@
 -(void)setDataSourceIndexPath:(NSIndexPath *)dataSourceIndexPath {
     _dataSourceIndexPath = dataSourceIndexPath;
     self.value = [self.dataSource valueForIndexPath:dataSourceIndexPath];
-    [self update];
+    for (UIView *view in self.views) {
+        [self updateView:view];
+    }
 }
 
 

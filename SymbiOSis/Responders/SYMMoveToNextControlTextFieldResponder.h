@@ -37,6 +37,7 @@
 * */
 @interface SYMMoveToNextControlTextFieldResponder : SYMResponder <UITextFieldDelegate>
 
+/** An ordered array of controls in the scene, in the sequence that the user should tab between them */
 @property (nonatomic, strong) IBOutletCollection(UIResponder) NSArray *nextResponders;
 
 @end

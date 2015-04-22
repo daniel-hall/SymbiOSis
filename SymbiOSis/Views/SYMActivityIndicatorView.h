@@ -1,5 +1,5 @@
 //
-// UINavigationController+SymbiOSis.h
+// SYMActivityIndicatorView.h
 //
 // Copyright (c) 2015 Dan Hall
 // Twitter: @_danielhall
@@ -23,10 +23,17 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#import <UIKit/UIKit.h>
-#import "SYMDataSourcesOwner.h"
 
-/** A category that enables UINavigationControllers that are the destination of segues to query their top view controller for data sources */
-@interface UINavigationController (SymbiOSis) <SYMDataSourcesOwner>
+#import <Foundation/Foundation.h>
+#import <UIKit/UIActivityIndicatorView.h>
+#import "SYMDataSource.h"
+
+
+/** A handy subclass of UIActivityIndicatorView that will automatically animate until all the data sources it is monitoring have been populated with data.  At that point, it will stop animating and hide itself. */
+@interface SYMActivityIndicatorView : UIActivityIndicatorView
+
+/** A collection of data sources that this Activity Indicator View will monitor.  When all connected data sources have populated their values, the indicator will stop animating and disappear */
+@property (nonatomic, strong) IBOutletCollection(SYMDataSource) NSArray *dataSources;
+
 
 @end

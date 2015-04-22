@@ -40,13 +40,21 @@
 /** If using this data source to populate a SYMTableViewBinding, SYMCollectionViewBinding, SYMPickerViewBinding, etc. with multiple sections, you can simply add multiple other data sources to this outlet collection.  They will be used in order as the data sources for each respective section.*/
 @property (nonatomic, strong) IBOutletCollection(SYMDataSource) NSArray *sectionDataSources;
 
-/** If this data source contains an array value, this method is called by SYMBinding subclasses that are inside a UITableViewCell or UICollectionViewCell to get the specific value out of the array that should populate each individual cell.  Also used by SYMPickerViewBinding to get components / rows for the bound UIPickerView*/
+/** If this data source contains an array value, this method is called by SYMBinding subclasses that are inside a UITableViewCell or UICollectionViewCell to get the specific value out of the array that should populate each individual cell.  Also used by SYMPickerViewBinding to get components / rows for the bound UIPickerView
+* @param indexPath The indexPath that the data source should return a value for.
+*
+* @return The value for the requested indexPath
+*/
 -(id)valueForIndexPath:(NSIndexPath *)indexPath;
 
 /** When used as a data source for table views or collection views, this provides the number of sections that are represented in the data source's value.  For UIPickerViews, it represents the number of "components". */
 - (NSInteger)numberOfSections;
 
-/** When used as a data source for table views, or collection views, this provides the number of items or rows contained in the specified section.  For UIPickerViews, the "section" parameter represents the component and this method returns the number of rows in that component. */
+/** When used as a data source for table views, or collection views, this provides the number of items or rows contained in the specified section.  For UIPickerViews, the "section" parameter represents the component and this method returns the number of rows in that component.
+* @param section The index of the section to return the number of rows in
+*
+* @return The number of rows in the specified section
+*/
 - (NSInteger)numberOfItemsInSection:(NSInteger)section;
 
 @end

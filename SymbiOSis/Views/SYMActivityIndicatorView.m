@@ -1,5 +1,5 @@
 //
-// UINavigationController+SymbiOSis.h
+// SYMActivityIndicatorView.m
 //
 // Copyright (c) 2015 Dan Hall
 // Twitter: @_danielhall
@@ -23,10 +23,35 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#import <UIKit/UIKit.h>
-#import "SYMDataSourcesOwner.h"
 
-/** A category that enables UINavigationControllers that are the destination of segues to query their top view controller for data sources */
-@interface UINavigationController (SymbiOSis) <SYMDataSourcesOwner>
+#import "SYMActivityIndicatorView.h"
+
+
+@implementation SYMActivityIndicatorView
+
+
+- (void)awakeFromNib {
+    [self startAnimating];
+    for (SYMDataSource *dataSource in self.dataSources) {
+        [dataSource addObserver:self forKeyPath:NSStringFromSelector(@selector(value)) options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew context:nil];
+    }
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    for (SYMDataSource *dataSource in self.dataSources) {
+        if (dataSource.value == nil) {
+            return;
+        }
+    }
+
+    [self stopAnimating];
+}
+
+- (void)dealloc {
+    for (SYMDataSource *dataSource in self.dataSources) {
+        [dataSource removeObserver:self forKeyPath:NSStringFromSelector(@selector(value))];
+    }
+}
+
 
 @end

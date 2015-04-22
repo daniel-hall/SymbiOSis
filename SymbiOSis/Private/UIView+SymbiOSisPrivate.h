@@ -27,6 +27,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+/** A category that adds the ability to get a copy of UIViews and their subclasses that are NSCoder compliant */
 @interface UIView (SymbiOSisPrivate)
 
 -(instancetype)copy;

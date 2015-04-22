@@ -37,17 +37,17 @@
     return self;
 }
 
--(void)update {
+-(void)updateView:(UILabel *)view {
     if (self.keyPath) {
         id value = [self.value valueForKeyPath:self.keyPath];
         if ([value isKindOfClass:[NSString class]]) {
-            self.view.text = value;
+            view.text = value;
         }
         else if ([value respondsToSelector:@selector(stringValue)]) {
-            self.view.text = [value stringValue];
+            view.text = [value stringValue];
         }
         else {
-            self.view.text = @"";
+            view.text = @"";
         }
     }
 }

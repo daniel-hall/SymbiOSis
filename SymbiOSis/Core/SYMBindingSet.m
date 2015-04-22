@@ -35,11 +35,11 @@
 @implementation SYMBindingSet
 
 
--(void)addBinding:(SYMBinding *)binding toView:(UIView *)view {
+-(void)addBinding:(SYMBinding *)binding withViews:(NSArray *)views {
     // It is necessary to add bindings as subviews because underlying code will later walk the view hierarchy to check if each binding is contained in a table or collection view cell.
     [self addSubview:binding];
-    
-    [binding bindView:view toDataSource:self.dataSource];
+
+    [binding bindViews:views toDataSource:self.dataSource];
     [self.bindings addObject:binding];
 }
 

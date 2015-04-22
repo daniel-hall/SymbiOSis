@@ -30,10 +30,11 @@
 @class SYMPickerViewSelectionResponder;
 
 /**
-* A binding that connects a data source to a UIPickerView on a storyboard.  There are additional options for populating the Picker View with static data instead of a dynamic data source:
+* A binding that connects a data source to a UIPickerView on a storyboard.  There are additional options for populating the Picker View with static data instead of a dynamic data source (but these will only work with a single column / component):
 * 1) Set a comma-separated string of values into the "Picker Values" field inside Interface Builder.  These will be displayed using the iOS default styling
 * 2) Connect 1 or more UILabels that contain the desired text values, along with any styling, font selection, sizing, etc. that is desired for each.
 *
+* Otherwise, connecting a dataSource via IBOutlet will populate the UIPickerView dynamically with the components and rows dictated by the dataSource's value.
 */
 @interface SYMPickerViewBinding : SYMBinding <UIPickerViewDataSource, UIPickerViewDelegate, SYMDataProviderProtocol>
 
@@ -43,8 +44,8 @@
 /** If using a SYMForwardDataThroughSegueResponder, the value that is pushed through the segue will be set on any data source in the destination scene that has a matching dataIdentifier value. */
 @property (nonatomic, copy) IBInspectable NSString *dataIdentifier;
 
-/** Override and re-type of the superclass's view property to specify a UITableView */
-@property (nonatomic, weak) IBOutlet UIPickerView *view;
+/** Redeclare and retype the superclass's views property to specify it is a collection of the type UIPickerView.  This gives better code completion as well as type checking when the making connections in Interface Builder */
+@property (nonatomic, strong) IBOutletCollection(UIPickerView) NSArray *views;
 
 /** A comma-separated string containing the values that the picker should display, if not using a linked data source */
 @property (nonatomic, copy) IBInspectable NSString *pickerValues;
@@ -54,5 +55,10 @@
 
 /** Responders that run when a picker item is selected */
 @property (nonatomic, strong) IBOutletCollection(SYMPickerViewSelectionResponder) NSArray *itemSelectionResponders;
+
+/** Redeclare superclass method to specify UIPickerView parameter
+* @param view The view that should be updated by the binding.  When a binding is connected to multiple views via its "views" property / IBOutletCollection, this method is called for each view in the array.
+*/
+-(void)updateView:(UIPickerView *)view;
 
 @end

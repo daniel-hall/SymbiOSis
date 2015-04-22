@@ -30,11 +30,11 @@
 
 /**
  
- The abstract superclass of all bindings. SYMBinding implements KVO observation of the specified data source, and calls its own update method when the data source's value updates.  It also automatically handles retrieving its own copy of the value before calling update, which allows it (in the context of something like a UITableViewCell or a UICollectionViewCell) to request the correct value for its index in the table, rather than the entire array from the data source.
+ The abstract superclass of all bindings. SYMBinding implements KVO observation of the specified data source, and calls its own update method when the data source's value updates.  It also automatically handles retrieving its own copy of the value before calling -updateView:, which allows it (in the context of something like a UITableViewCell or a UICollectionViewCell) to request the correct value for its index in the table, rather than the entire array from the data source.
  
  Note that SYMBinding is a subclass of UIView because there is no other way to insert it into a UITableViewCell or UICollectionViewCell prototype in a storyboard.  Individual prototype cells cannot be linked to storyboard objects, nor can they contain a subclass of NSObject that is not a UIView.
  
- To use a subclass of SYMBinding, drag an "Object" component from the Interface Builder component library into the left sidebar of a storyboard scene next to "First Responder" and "Exit".  Set that object's custom class the match the class of the binding you want to use.  In the bindings outlets tab in the right sidebar of Interface Builder, drag out the connection to the view that should be updated, and the data source object that will provide the underlying value.  See README and the example project for more details.
+ To use a subclass of SYMBinding, drag an "Object" component from the Interface Builder component library into the left sidebar of a storyboard scene next to "First Responder" and "Exit".  Set that object's custom class the match the class of the binding you want to use.  In the bindings outlets tab in the right sidebar of Interface Builder, drag out the connection to the view(s) that should be updated, and the data source object that will provide the underlying value.  See README and the example project for more details.
 
 */
 
@@ -43,8 +43,8 @@
 /** The data source that will be observed, and have its value in some way linked to a UILabel, UIButton, etc. on the storyboard */
 @property (nonatomic, readonly) SYMDataSource *dataSource;
 
-/** The view that will be updated based on values from the data source.  Subclasses of SYMBinding should make this an IBOulet (for connecting via storyboard) and retype as a specific UIView subclass (e.g. UILabel, UIButton, etc.  This will allow Interface Builder to only allow connection to the right kind of control or subview. */
-@property (nonatomic, weak) UIView *view;
+/** The views that will be updated based on values from the data source.  Subclasses of SYMBinding should make this an IBOutletCollection (for connecting via storyboard) that is typed to a specific UIView subclass (e.g. UILabel, UIButton, etc.  This will allow Interface Builder to only allow connections to the right kind of control or subview. */
+@property (nonatomic, strong) NSArray *views;
 
 /** The value retrieved from the data source, which is then used to update the specified view.  Subclasses should retype this property to a specific object type in order to get code completion, etc.  */
 @property (nonatomic) id value;
@@ -54,14 +54,16 @@
 
 /** Most bindings are linked to their data source and view via IBOutlets in the storyboard.  However, when initialized via code (for example inside a binding set), this method sets up that linkage manually.
 *
-* @param view The view that will be modified with a new title, text, color, etc. when the data source's value changes.
+* @param views The array of views that will be modified with a new title, text, color, etc. when the data source's value changes.
 * @param dataSource The object that is observed, and where the value used to calculate changes to the view will come from.
 *
 */
--(void)bindView:(UIView *)view toDataSource:(SYMDataSource *)dataSource;
+-(void)bindViews:(NSArray *)views toDataSource:(SYMDataSource *)dataSource;
 
-/** This method is implemented by subclasses to provide the exact logic needed to retrieve properties from the value passed in by the data source (e.g. firstName, lastName) and use them to populate the target view (e.g. fullNameLabel).  See example project for sample usage in subclasses */
--(void)update;
+/** This method is implemented by subclasses to provide the exact logic needed to retrieve properties from the value passed in by the data source (e.g. firstName, lastName) and use them to populate the target view (e.g. fullNameLabel).  The binding subclass should redeclare method and retype the parameter to match the expected type of view for code completion.  See example project for sample usage in subclasses
+* @param view The view that should be updated by the binding.  When a binding is connected to multiple views via its "views" property / IBOutletCollection, this method is called for each view in the array.
+*/
+-(void)updateView:(UIView *)view;
 
 /** Because the binding's KVO is set to fire immediately with the initial data source values, this setup method is called first to allow for setting up local dictionaries or setting before starting to respond to that data and populate the view.  Subclasses should override this if they need to do some sort of setup that might normally happen in their init method.  Because bindings are often decoded from storyboards, subclass specific setup should not be placed inside an init method or anywhere else except an override of this setup method */
 -(void)setup;

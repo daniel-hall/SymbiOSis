@@ -28,6 +28,11 @@
 
 @implementation SYMLabelBinding
 
-@dynamic view;
+@dynamic views;
+
+- (void)updateView:(UILabel *)view {
+    //Implement in subclasses
+}
+
 
 @end

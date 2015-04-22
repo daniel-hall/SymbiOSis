@@ -31,7 +31,7 @@
 
 /** Behaves identically to the standard dequeueReusableCellWithIdentifier: method on a UITableView, with the addition of an extra parameter that sets the index that bindings inside the cell should use for retrieving their specific value from the data source
 * @param identifier Same as in [UITableView dequeueReusableCellWithIdentifier:] method
-* @param dataSourceIndex The index that should be used to retrieve this cell's value from the data source.  This isn't always the same as the indexPath.row or indexPath.item.  For example, in a table view that has some header cells that appear before the main content cells, the dataSourceIndex for the main content cells would be their indexPath.item - the number of header cells.
+* @param dataSourceIndexPath The index path that should be used to retrieve this cell's value from the data source.
 * @return a UITableViewCell or subclass.
 */
 -(id)dequeueReusableCellWithIdentifier:(NSString *)identifier andDataSourceIndexPath:(NSIndexPath *)dataSourceIndexPath;

@@ -28,6 +28,11 @@
 
 @implementation SYMButtonBinding
 
-@dynamic view;
+@dynamic views;
+
+- (void)updateView:(UIButton *)view {
+    //Implement in subclasses
+}
+
 
 @end

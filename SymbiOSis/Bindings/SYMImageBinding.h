@@ -30,7 +30,12 @@
 
 @interface SYMImageBinding : SYMBinding
 
-/** override and retype of the superclass's view property to specify it is of the type UiImageView*.  This gives better code completion and compiler checking when the binding needs to set properties on the image view */
-@property (nonatomic, weak) IBOutlet UIImageView *view;
+/** Redeclare and retype the superclass's views property to specify it is a collection of the type UIImageView.  This gives better code completion as well as type checking when the making connections in Interface Builder */
+@property (nonatomic, strong) IBOutletCollection(UIImageView) NSArray *views;
+
+/** Redeclare superclass method to specify UIImageView parameter
+* @param view The view that should be updated by the binding.  When a binding is connected to multiple views via its "views" property / IBOutletCollection, this method is called for each view in the array.
+*/
+-(void)updateView:(UIImageView *)view;
 
 @end

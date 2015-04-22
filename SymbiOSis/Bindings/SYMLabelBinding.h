@@ -30,7 +30,12 @@
 
 @interface SYMLabelBinding : SYMBinding
 
-/** override and retype of the superclass's view property to specify it is of the type UILabel*.  This gives better code completion and compiler checking when the binding needs to set properties on the label */
-@property (nonatomic, weak) IBOutlet UILabel *view;
+/** Redeclare and retype the superclass's views property to specify it is a collection of the type UILabel.  This gives better code completion as well as type checking when the making connections in Interface Builder */
+@property (nonatomic, strong) IBOutletCollection(UILabel) NSArray *views;
+
+/** Redeclare superclass method to specify UILabel parameter
+* @param view The view that should be updated by the binding.  When a binding is connected to multiple views via its "views" property / IBOutletCollection, this method is called for each view in the array.
+*/
+-(void)updateView:(UILabel *)view;
 
 @end

@@ -28,6 +28,11 @@
 
 @implementation SYMImageBinding
 
-@dynamic view;
+@dynamic views;
+
+- (void)updateView:(UIImageView *)view {
+    //Implement in subclasses
+}
+
 
 @end

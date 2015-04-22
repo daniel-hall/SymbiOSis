@@ -34,8 +34,8 @@
 /** A convenience method that allows for easily adding a binding to the set.
 *
 * @param binding An allocated, initialized instance of a SYMBinding subclass.
-* @param view The view that should be updated by the binding.  Usually, this would be a reference to an IBOutlet, such as "self.fullNameLabel".
+* @param views The views that should be updated by the binding.  Usually, this would be a reference to an IBOutletCollection, such as "self.fullNameLabels".
 */
--(void)addBinding:(SYMBinding *)binding toView:(UIView *)view;
+-(void)addBinding:(SYMBinding *)binding withViews:(NSArray *)views;
 
 @end

@@ -38,7 +38,7 @@
 @implementation SYMPickerViewBinding
 
 @dynamic value;
-@dynamic view;
+@dynamic views;
 
 @synthesize sourceValue = _sourceValue;
 
@@ -94,15 +94,20 @@
     if (label) {
         self.sourceValue = label.text;
         for (SYMPickerViewSelectionResponder *responder in self.itemSelectionResponders) {
-            [responder pickerView:self.view selectedValue:self.sourceValue withLabel:label fromIndexPath:[NSIndexPath indexPathForRow:row inSection:component]];
+            [responder pickerView:pickerView selectedValue:self.sourceValue withLabel:label fromIndexPath:[NSIndexPath indexPathForRow:row inSection:component]];
         }
     }
     else {
         self.sourceValue = [self pickerView:pickerView titleForRow:row forComponent:component];
         for (SYMPickerViewSelectionResponder *responder in self.itemSelectionResponders) {
-            [responder pickerView:self.view selectedValue:self.sourceValue withLabel:nil fromIndexPath:[NSIndexPath indexPathForRow:row inSection:component]];
+            [responder pickerView:pickerView selectedValue:self.sourceValue withLabel:nil fromIndexPath:[NSIndexPath indexPathForRow:row inSection:component]];
         }
     }
+}
+
+
+- (void)updateView:(UIPickerView *)view {
+    [view reloadAllComponents];
 }
 
 

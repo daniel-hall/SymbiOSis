@@ -28,6 +28,6 @@
 
 @implementation SYMViewBinding
 
-@dynamic view;
+@dynamic views;
 
 @end

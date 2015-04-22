@@ -45,7 +45,11 @@
 */
 - (void)pickerView:(UIPickerView *)pickerView selectedValue:(NSString *)value withLabel:(UILabel *)label fromIndexPath:(NSIndexPath *)indexPath;
 
-/** Check to see if this responder should run in response to a cell selection at the given index path*/
+/** Check to see if this responder should run in response to a cell selection at the given index path
+*
+* @param indexPath The index path that is being queried as to whether this responder will run for it
+* @return YES if the the responder will run for the specified index path; otherwise NO.
+*/
 -(BOOL)shouldRunForIndexPath:(NSIndexPath *)indexPath;
 
 @end
