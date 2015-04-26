@@ -33,6 +33,6 @@
 @property (nonatomic, copy) NSString *dataIdentifier;
 
 /** The source value that will be passed through to a target data source */
-@property (nonatomic, strong) id sourceValue;
+@property (nonatomic, strong) NSObject *sourceValue;
 
 @end

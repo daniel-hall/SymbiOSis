@@ -25,7 +25,7 @@
 
 
 #import "UITableViewCell+SymbiOSis.h"
-#import "SYMBinding.h"
+#import "SYMBindingType.h"
 
 @implementation UITableViewCell (SymbiOSis)
 
@@ -33,20 +33,22 @@
     NSMutableArray *bindingsForView = [NSMutableArray array];
     [self addViewModelBindingsForView:self toArray:bindingsForView];
     
-    for (SYMBinding *binding in bindingsForView)
+    for (SYMBindingType *binding in bindingsForView)
     {
         binding.dataSourceIndexPath = dataSourceIndexPath;
     }
 }
+
 
 -(NSIndexPath *)dataSourceIndexPath {
 
     return nil;  //The dataSourceIndex property is only used as a setter so no need to implement storage for this write-only property
 }
 
+
 -(void)addViewModelBindingsForView:(UIView *)view toArray:(NSMutableArray *)array {
     for (UIView *subview in view.subviews) {
-        if ([subview isKindOfClass:[SYMBinding class]]) {
+        if ([subview isKindOfClass:[SYMBindingType class]]) {
             [array addObject:subview];
         }
         else {
@@ -54,5 +56,17 @@
         }
     }
 }
+
+
+- (void)resetBindings {
+    NSMutableArray *bindingsForView = [NSMutableArray array];
+    [self addViewModelBindingsForView:self toArray:bindingsForView];
+
+    for (SYMBindingType *binding in bindingsForView)
+    {
+        [binding resetViews];
+    }
+}
+
 
 @end

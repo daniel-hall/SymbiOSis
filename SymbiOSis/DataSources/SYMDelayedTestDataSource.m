@@ -1,5 +1,5 @@
 //
-// UICollectionViewCell+SymbiOSis.m
+// SYMDelayedTestDataSource.m
 //
 // Copyright (c) 2015 Dan Hall
 // Twitter: @_danielhall
@@ -24,47 +24,23 @@
 // SOFTWARE.
 
 
-#import "UICollectionViewCell+SymbiOSis.h"
-#import "SYMBindingType.h"
+#import "SYMDelayedTestDataSource.h"
 
 
-@implementation UICollectionViewCell (SymbiOSis)
+@implementation SYMDelayedTestDataSource
 
--(void)setDataSourceIndexPath:(NSIndexPath *)dataSourceIndexPath {
-    NSMutableArray *bindingsForView = [NSMutableArray array];
-    [self addViewModelBindingsForView:self toArray:bindingsForView];
-    
-    for (SYMBindingType *binding in bindingsForView)
-    {
-        binding.dataSourceIndexPath = dataSourceIndexPath;
-    }
-}
 
--(NSIndexPath *)dataSourceIndexPath {
-    return nil;  //The dataSourceIndex property is only used as a setter so no need to implement storage for this write-only property
-}
-
--(void)addViewModelBindingsForView:(UIView *)view toArray:(NSMutableArray *)array {
-    for (UIView *subview in view.subviews) {
-        if ([subview isKindOfClass:[SYMBindingType class]]) {
-            [array addObject:subview];
+-(void)awakeFromNib {
+    // This is just an example data source to simulate a delayed / asynchronous load from some remote service.
+    __weak typeof(self)weakSelf = self;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(self.loadDelay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if ([weakSelf.testValue rangeOfString:@","].length > 0) {
+            weakSelf.value = [weakSelf.testValue componentsSeparatedByString:@","];
         }
         else {
-            [self addViewModelBindingsForView:subview toArray:array];
+            weakSelf.value = weakSelf.testValue;
         }
-    }
+    });
 }
-
-
-- (void)resetBindings {
-    NSMutableArray *bindingsForView = [NSMutableArray array];
-    [self addViewModelBindingsForView:self toArray:bindingsForView];
-
-    for (SYMBindingType *binding in bindingsForView)
-    {
-        [binding resetViews];
-    }
-}
-
 
 @end

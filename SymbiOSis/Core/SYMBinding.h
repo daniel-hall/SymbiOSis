@@ -27,6 +27,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "SYMDataSource.h"
+#import "SYMBindingType.h"
 
 /**
  
@@ -38,7 +39,7 @@
 
 */
 
-@interface SYMBinding : UIView
+@interface SYMBinding : SYMBindingType
 
 /** The data source that will be observed, and have its value in some way linked to a UILabel, UIButton, etc. on the storyboard */
 @property (nonatomic, readonly) SYMDataSource *dataSource;
@@ -46,11 +47,8 @@
 /** The views that will be updated based on values from the data source.  Subclasses of SYMBinding should make this an IBOutletCollection (for connecting via storyboard) that is typed to a specific UIView subclass (e.g. UILabel, UIButton, etc.  This will allow Interface Builder to only allow connections to the right kind of control or subview. */
 @property (nonatomic, strong) NSArray *views;
 
-/** The value retrieved from the data source, which is then used to update the specified view.  Subclasses should retype this property to a specific object type in order to get code completion, etc.  */
-@property (nonatomic) id value;
-
-/** If this binding exists in a UITableViewCell or UICollectionViewCell, this property specified the index path it should use to retrieve its specific value from the data source's array and populate the cell with. */
-@property (nonatomic) NSIndexPath *dataSourceIndexPath;
+/** The value retrieved from the data source, which is then used to update the specified view.  Subclasses should retype this property to a specific object type in order to get code completion, etc.  The SYMBinding superclass will automatically ignore any value that is set which doesn't match the type specified for this property in the subclass. */
+@property (nonatomic) NSObject *value;
 
 /** Most bindings are linked to their data source and view via IBOutlets in the storyboard.  However, when initialized via code (for example inside a binding set), this method sets up that linkage manually.
 *

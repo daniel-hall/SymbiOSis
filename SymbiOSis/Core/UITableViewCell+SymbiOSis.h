@@ -31,4 +31,7 @@
 /** Sets the dataSourceIndexPath on all bindings contained within this cell */
 @property (nonatomic) NSIndexPath *dataSourceIndexPath;
 
+/** Tells all bindings within the cell to reset their views to the state before the bindings altered them.  Used instead of manual overrides of -prepareForReuse; */
+-(void)resetBindings;
+
 @end

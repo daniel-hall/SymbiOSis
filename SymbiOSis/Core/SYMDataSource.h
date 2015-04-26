@@ -32,7 +32,7 @@
 @interface SYMDataSource : NSObject <SYMDataProviderProtocol>
 
 /** The value is that will be passed in to SYMBinding subclasses and used to update UI components.  Subclasses should retype this property to match the specific type of their own value, for better compiler checking and code completion. */
-@property (nonatomic, strong) id value;
+@property (nonatomic, strong) NSObject *value;
 
 /** An optional, non-unique string identifier that matches a data provider in this scene or a previous scene, if this data source should have its value populated from that other data provider */
 @property (nonatomic, copy) IBInspectable NSString *dataIdentifier;

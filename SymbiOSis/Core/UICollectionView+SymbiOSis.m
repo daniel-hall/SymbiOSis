@@ -32,6 +32,7 @@
 
 -(id)dequeueReusableCellWithReuseIdentifier:(NSString *)identifier forIndexPath:(NSIndexPath *)indexPath withDataSourceIndexPath:(NSIndexPath *)dataSourceIndexPath {
     UICollectionViewCell *cell = [self dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
+    [cell resetBindings];
     cell.dataSourceIndexPath = dataSourceIndexPath;
     return cell;
 }

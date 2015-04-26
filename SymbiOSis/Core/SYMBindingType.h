@@ -1,5 +1,5 @@
 //
-// SYMActivityIndicatorView.m
+// SYMBindingType.h
 //
 // Copyright (c) 2015 Dan Hall
 // Twitter: @_danielhall
@@ -24,34 +24,16 @@
 // SOFTWARE.
 
 
-#import "SYMActivityIndicatorView.h"
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
+/** A minimal superclass shared by SYMBinding as well as other specialized binding types, such as SYMHideViewShowViewWhenDataLoadsBinding. This awkward inheritance is used instead of a protocol because Interface Builder doesn't recognize protocols when validating IBOutlet connections */
+@interface SYMBindingType : UIView
 
-@implementation SYMActivityIndicatorView
+/** If this binding exists in a UITableViewCell or UICollectionViewCell, this property specified the index path it should use to retrieve its specific value from the data source's array and populate the cell with. */
+@property (nonatomic) NSIndexPath *dataSourceIndexPath;
 
-
-- (void)awakeFromNib {
-    [self startAnimating];
-    for (SYMDataSource *dataSource in self.dataSources) {
-        [dataSource addObserver:self forKeyPath:NSStringFromSelector(@selector(value)) options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew context:nil];
-    }
-}
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    for (SYMDataSource *dataSource in self.dataSources) {
-        if (dataSource.value == nil) {
-            return;
-        }
-    }
-
-    [self stopAnimating];
-}
-
-- (void)dealloc {
-    for (SYMDataSource *dataSource in self.dataSources) {
-        [dataSource removeObserver:self forKeyPath:NSStringFromSelector(@selector(value))];
-    }
-}
-
+/** This method resets bound views / controls to the state they were in before the binding set any properties.  Used, for example, when preparing UITableViewCells and UICollectionViewCells for reuse. */
+-(void)resetViews;
 
 @end

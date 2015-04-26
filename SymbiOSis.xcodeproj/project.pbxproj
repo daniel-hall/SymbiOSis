@@ -11,11 +11,11 @@
 		6C0B524EAC7D7D72CB59488C /* SYMStaticDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C0B58080AA81DFECF8105EF /* SYMStaticDataSource.m */; };
 		6C0B5E67B9DB6BF0C6513252 /* UIView+SymbiOSisPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C0B5F238F17550A664C891A /* UIView+SymbiOSisPrivate.m */; };
 		6C0B5F4B08202A116126182A /* UIView+SymbiOSisPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C0B539580B86AE902D4283B /* UIView+SymbiOSisPrivate.h */; };
+		A249F023F3898EFFA0CB8097 /* SYMDelayedTestDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A249F70007ADF320CCBDC2AB /* SYMDelayedTestDataSource.m */; };
 		A249F029BB98C321197C0304 /* SYMDataSourcesOwner.h in Headers */ = {isa = PBXBuildFile; fileRef = A249F415899D032098EA5EBD /* SYMDataSourcesOwner.h */; };
 		A249F064AA0188B8750E7105 /* UITableViewCell+SymbiOSis.h in Headers */ = {isa = PBXBuildFile; fileRef = A249FF4A0CDAC40952D476EA /* UITableViewCell+SymbiOSis.h */; };
 		A249F07C5CB9B5D546D53DA2 /* SYMPickerViewSelectionResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = A249F0B09F65CF9160890A20 /* SYMPickerViewSelectionResponder.m */; };
 		A249F08F8C16D0252CE9ECCB /* SYMBindingSet.h in Headers */ = {isa = PBXBuildFile; fileRef = A249F03FE31EF76F157AC943 /* SYMBindingSet.h */; };
-		A249F08FF28656A75BA5299D /* SYMActivityIndicatorView.h in Headers */ = {isa = PBXBuildFile; fileRef = A249F7A8070FD43228F59955 /* SYMActivityIndicatorView.h */; };
 		A249F0D470BE99BBCD2A98D8 /* SYMForwardDataThroughSegueResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = A249F3C6EEB404DC072B5F34 /* SYMForwardDataThroughSegueResponder.m */; };
 		A249F0DC3A9A6094D5BAC504 /* SYMDeselectCellResponder.h in Headers */ = {isa = PBXBuildFile; fileRef = A249F7CF38FACD8376851ABA /* SYMDeselectCellResponder.h */; };
 		A249F0EA8C36A2A37962FB58 /* UITableView+SymbiOSis.h in Headers */ = {isa = PBXBuildFile; fileRef = A249FD521110B2C446417521 /* UITableView+SymbiOSis.h */; };
@@ -24,13 +24,14 @@
 		A249F15D8B619237B0F26C61 /* SYMActionResponder.h in Headers */ = {isa = PBXBuildFile; fileRef = A249F955279CCC06624F1DAA /* SYMActionResponder.h */; };
 		A249F1760B8939F8CA2266DC /* SYMPickerViewSelectionResponder.h in Headers */ = {isa = PBXBuildFile; fileRef = A249F676B1E7EA115D95BED9 /* SYMPickerViewSelectionResponder.h */; };
 		A249F20C332A8AF4CA62D0BD /* UITableView+SymbiOSis.m in Sources */ = {isa = PBXBuildFile; fileRef = A249FB2B67185DE10895BD33 /* UITableView+SymbiOSis.m */; };
-		A249F20E42B62ED9C1635DB5 /* SYMActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = A249F1B53A80D1059917A54A /* SYMActivityIndicatorView.m */; };
 		A249F246E4B02BCCCE6EA893 /* SYMPickerViewBinding.h in Headers */ = {isa = PBXBuildFile; fileRef = A249FE6D3276379EB28B6016 /* SYMPickerViewBinding.h */; };
 		A249F2E9FDA69F094AF0A923 /* SYMResponder.h in Headers */ = {isa = PBXBuildFile; fileRef = A249FCB170A65B3D95B09D18 /* SYMResponder.h */; };
 		A249F32A86067F966A106E1E /* SymbiOSis.h in Headers */ = {isa = PBXBuildFile; fileRef = A249F1523D5FA2DA1D57B8F8 /* SymbiOSis.h */; };
 		A249F36997FF4C90BA35CE97 /* UICollectionView+SymbiOSis.m in Sources */ = {isa = PBXBuildFile; fileRef = A249F5EDAFCB8A69FE150826 /* UICollectionView+SymbiOSis.m */; };
 		A249F36D41EB1F6067326B01 /* SYMTableViewCellSelectionResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = A249F50A91BE7C6555C13944 /* SYMTableViewCellSelectionResponder.m */; };
 		A249F3A94B65F48FD7C57149 /* SYMButtonBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = A249FDEA2D37C0CE7E194949 /* SYMButtonBinding.m */; };
+		A249F3CFD15D6220A2FA617D /* SYMHideViewShowViewWhenDataLoadsBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = A249F8811577B259070C5900 /* SYMHideViewShowViewWhenDataLoadsBinding.m */; };
+		A249F3DEB88375672B981FCB /* SYMViewState.m in Sources */ = {isa = PBXBuildFile; fileRef = A249F3CBACBD412D44BB24CF /* SYMViewState.m */; };
 		A249F43E5104F6F8C6A1642C /* SYMDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A249F9422B235E47AA5DBC92 /* SYMDataSource.m */; };
 		A249F45A59707630349E79B1 /* SYMResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = A249F339674D5451636C8AA2 /* SYMResponder.m */; };
 		A249F4F439F2DC7A8590E957 /* SYMSegueHandlerProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = A249FDBDF5BCF4146812D5B0 /* SYMSegueHandlerProtocol.h */; };
@@ -38,16 +39,20 @@
 		A249F55F785238DB46093458 /* SYMForwardDataThroughSegueResponder.h in Headers */ = {isa = PBXBuildFile; fileRef = A249F67CCDEFDF5D66A9A5B3 /* SYMForwardDataThroughSegueResponder.h */; };
 		A249F57871064114A67C13AC /* SYMLabelBinding.h in Headers */ = {isa = PBXBuildFile; fileRef = A249FCC6021D33E1CB6F1229 /* SYMLabelBinding.h */; };
 		A249F5B97DAA90CE9412E09C /* SYMViewBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = A249F35D0D11066779C028D2 /* SYMViewBinding.m */; };
+		A249F5BDFE8E055721B009AD /* SYMHideViewShowViewWhenDataLoadsBinding.h in Headers */ = {isa = PBXBuildFile; fileRef = A249F494ED7C98ADA62BE626 /* SYMHideViewShowViewWhenDataLoadsBinding.h */; };
 		A249F624E1B5C9440FC2413F /* SYMBinding.h in Headers */ = {isa = PBXBuildFile; fileRef = A249F6D7A5DA1E9ABE741568 /* SYMBinding.h */; };
 		A249F69812E29D1D8A2755DA /* UICollectionView+SymbiOSis.h in Headers */ = {isa = PBXBuildFile; fileRef = A249FC70B1F23F20042BD020 /* UICollectionView+SymbiOSis.h */; };
 		A249F72218C5F5978EC395CC /* SYMDeselectCellResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = A249F43B6794FEE1EEBD9386 /* SYMDeselectCellResponder.m */; };
 		A249F789CE6A5267E1E9BBE0 /* SYMBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = A249FB7ABF11252B5DF65B36 /* SYMBinding.m */; };
+		A249F7C5C0E552A231EBFB06 /* SYMDelayedTestDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = A249F8E9086D180798B89229 /* SYMDelayedTestDataSource.h */; };
 		A249F82A6817E4594D1053B4 /* SYMViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A249FE21E4C2542A526F420C /* SYMViewController.h */; };
 		A249F861A8CE6129D20B546C /* SYMButtonBinding.h in Headers */ = {isa = PBXBuildFile; fileRef = A249F1F459334CEEDBDFF332 /* SYMButtonBinding.h */; };
 		A249F8A198B3453415B29E84 /* SYMKeyPathLabelBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = A249F279E0DB9AC421E2575B /* SYMKeyPathLabelBinding.m */; };
 		A249F8E12D2DD0A7A0E5EE46 /* UINavigationController+SymbiOSis.h in Headers */ = {isa = PBXBuildFile; fileRef = A249FD319502668A8FC16F54 /* UINavigationController+SymbiOSis.h */; };
 		A249F928E676CF747915551F /* SYMTableViewCellSelectionResponder.h in Headers */ = {isa = PBXBuildFile; fileRef = A249F4EA6308CFE8C0BA6B7E /* SYMTableViewCellSelectionResponder.h */; };
+		A249F9C3CFE95305C03F86E9 /* SYMViewState.h in Headers */ = {isa = PBXBuildFile; fileRef = A249F1689C9BE4189DB0ED2E /* SYMViewState.h */; };
 		A249F9F00A5EFE10FB404D10 /* UICollectionViewCell+SymbiOSis.h in Headers */ = {isa = PBXBuildFile; fileRef = A249F7748317E9768A7FB81F /* UICollectionViewCell+SymbiOSis.h */; };
+		A249FA2818FFCAA5EA4E74FE /* SYMBindingType.h in Headers */ = {isa = PBXBuildFile; fileRef = A249F1CB79B2BD35713670D1 /* SYMBindingType.h */; };
 		A249FA48CBFCBE6D8072A92B /* SYMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A249F75B2FF4BA1A51D27C27 /* SYMViewController.m */; };
 		A249FA8C2DF1495F3516708C /* SYMDismissKeyboardResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = A249FE2FEE23C7077CEE4454 /* SYMDismissKeyboardResponder.m */; };
 		A249FAD0BB7D5E7BE8BF0965 /* SYMImageBinding.h in Headers */ = {isa = PBXBuildFile; fileRef = A249FFFFD0A96F73DA57B79B /* SYMImageBinding.h */; };
@@ -67,6 +72,7 @@
 		A249FED260BF1D1A45BBBDC0 /* UICollectionViewCell+SymbiOSis.m in Sources */ = {isa = PBXBuildFile; fileRef = A249F5BC2082952195913E06 /* UICollectionViewCell+SymbiOSis.m */; };
 		A249FED8FB2DA3EFDFE442B6 /* SYMViewBinding.h in Headers */ = {isa = PBXBuildFile; fileRef = A249FF0553996922DCCCFBD0 /* SYMViewBinding.h */; };
 		A249FF4DBAFF4797C2CD3734 /* UITableViewCell+SymbiOSis.m in Sources */ = {isa = PBXBuildFile; fileRef = A249F7111DD1B44D1750D40A /* UITableViewCell+SymbiOSis.m */; };
+		A249FF6BDED048FE65900DC8 /* SYMBindingType.m in Sources */ = {isa = PBXBuildFile; fileRef = A249F91AB3D0ED68405D9096 /* SYMBindingType.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,7 +85,8 @@
 		A249F0B09F65CF9160890A20 /* SYMPickerViewSelectionResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMPickerViewSelectionResponder.m; sourceTree = "<group>"; };
 		A249F0CBC095ED337D7D0D55 /* SYMMoveToNextControlTextFieldResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMMoveToNextControlTextFieldResponder.m; sourceTree = "<group>"; };
 		A249F1523D5FA2DA1D57B8F8 /* SymbiOSis.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SymbiOSis.h; sourceTree = "<group>"; };
-		A249F1B53A80D1059917A54A /* SYMActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMActivityIndicatorView.m; sourceTree = "<group>"; };
+		A249F1689C9BE4189DB0ED2E /* SYMViewState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMViewState.h; sourceTree = "<group>"; };
+		A249F1CB79B2BD35713670D1 /* SYMBindingType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMBindingType.h; sourceTree = "<group>"; };
 		A249F1F459334CEEDBDFF332 /* SYMButtonBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMButtonBinding.h; sourceTree = "<group>"; };
 		A249F2567834B2CF7A872F3D /* SYMKeyPathLabelBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMKeyPathLabelBinding.h; sourceTree = "<group>"; };
 		A249F279E0DB9AC421E2575B /* SYMKeyPathLabelBinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMKeyPathLabelBinding.m; sourceTree = "<group>"; };
@@ -88,9 +95,11 @@
 		A249F339674D5451636C8AA2 /* SYMResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMResponder.m; sourceTree = "<group>"; };
 		A249F35D0D11066779C028D2 /* SYMViewBinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMViewBinding.m; sourceTree = "<group>"; };
 		A249F3C6EEB404DC072B5F34 /* SYMForwardDataThroughSegueResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMForwardDataThroughSegueResponder.m; sourceTree = "<group>"; };
+		A249F3CBACBD412D44BB24CF /* SYMViewState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMViewState.m; sourceTree = "<group>"; };
 		A249F415899D032098EA5EBD /* SYMDataSourcesOwner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMDataSourcesOwner.h; sourceTree = "<group>"; };
 		A249F43B6794FEE1EEBD9386 /* SYMDeselectCellResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMDeselectCellResponder.m; sourceTree = "<group>"; };
 		A249F476CCB97B0075A34309 /* SYMBindingSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMBindingSet.m; sourceTree = "<group>"; };
+		A249F494ED7C98ADA62BE626 /* SYMHideViewShowViewWhenDataLoadsBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMHideViewShowViewWhenDataLoadsBinding.h; sourceTree = "<group>"; };
 		A249F4EA6308CFE8C0BA6B7E /* SYMTableViewCellSelectionResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMTableViewCellSelectionResponder.h; sourceTree = "<group>"; };
 		A249F4EE35B74358191116A1 /* SYMImageBinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMImageBinding.m; sourceTree = "<group>"; };
 		A249F50A91BE7C6555C13944 /* SYMTableViewCellSelectionResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMTableViewCellSelectionResponder.m; sourceTree = "<group>"; };
@@ -101,14 +110,17 @@
 		A249F67CCDEFDF5D66A9A5B3 /* SYMForwardDataThroughSegueResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMForwardDataThroughSegueResponder.h; sourceTree = "<group>"; };
 		A249F6BDC682C2D78E7E2ED6 /* SymbiOSis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SymbiOSis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A249F6D7A5DA1E9ABE741568 /* SYMBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMBinding.h; sourceTree = "<group>"; };
+		A249F70007ADF320CCBDC2AB /* SYMDelayedTestDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMDelayedTestDataSource.m; sourceTree = "<group>"; };
 		A249F7111DD1B44D1750D40A /* UITableViewCell+SymbiOSis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+SymbiOSis.m"; sourceTree = "<group>"; };
 		A249F75B2FF4BA1A51D27C27 /* SYMViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMViewController.m; sourceTree = "<group>"; };
 		A249F7748317E9768A7FB81F /* UICollectionViewCell+SymbiOSis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionViewCell+SymbiOSis.h"; sourceTree = "<group>"; };
 		A249F79D798913D66F63B857 /* SYMDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMDataSource.h; sourceTree = "<group>"; };
-		A249F7A8070FD43228F59955 /* SYMActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMActivityIndicatorView.h; sourceTree = "<group>"; };
 		A249F7CF38FACD8376851ABA /* SYMDeselectCellResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMDeselectCellResponder.h; sourceTree = "<group>"; };
 		A249F8077763FB41CB81F072 /* SYMDismissViewControllerResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMDismissViewControllerResponder.h; sourceTree = "<group>"; };
+		A249F8811577B259070C5900 /* SYMHideViewShowViewWhenDataLoadsBinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMHideViewShowViewWhenDataLoadsBinding.m; sourceTree = "<group>"; };
 		A249F8DF483B227A5CE89D1E /* SYMDismissKeyboardResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMDismissKeyboardResponder.h; sourceTree = "<group>"; };
+		A249F8E9086D180798B89229 /* SYMDelayedTestDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMDelayedTestDataSource.h; sourceTree = "<group>"; };
+		A249F91AB3D0ED68405D9096 /* SYMBindingType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMBindingType.m; sourceTree = "<group>"; };
 		A249F9422B235E47AA5DBC92 /* SYMDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMDataSource.m; sourceTree = "<group>"; };
 		A249F955279CCC06624F1DAA /* SYMActionResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMActionResponder.h; sourceTree = "<group>"; };
 		A249F97B89FE7DE27CC9CEBA /* SYMLabelBinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMLabelBinding.m; sourceTree = "<group>"; };
@@ -150,6 +162,8 @@
 			children = (
 				6C0B5F238F17550A664C891A /* UIView+SymbiOSisPrivate.m */,
 				6C0B539580B86AE902D4283B /* UIView+SymbiOSisPrivate.h */,
+				A249F3CBACBD412D44BB24CF /* SYMViewState.m */,
+				A249F1689C9BE4189DB0ED2E /* SYMViewState.h */,
 			);
 			path = Private;
 			sourceTree = "<group>";
@@ -159,6 +173,8 @@
 			children = (
 				6C0B58080AA81DFECF8105EF /* SYMStaticDataSource.m */,
 				6C0B548B960674C5E0610989 /* SYMStaticDataSource.h */,
+				A249F70007ADF320CCBDC2AB /* SYMDelayedTestDataSource.m */,
+				A249F8E9086D180798B89229 /* SYMDelayedTestDataSource.h */,
 			);
 			path = DataSources;
 			sourceTree = "<group>";
@@ -219,6 +235,8 @@
 				A249F415899D032098EA5EBD /* SYMDataSourcesOwner.h */,
 				A249F676B1E7EA115D95BED9 /* SYMPickerViewSelectionResponder.h */,
 				A249F0B09F65CF9160890A20 /* SYMPickerViewSelectionResponder.m */,
+				A249F91AB3D0ED68405D9096 /* SYMBindingType.m */,
+				A249F1CB79B2BD35713670D1 /* SYMBindingType.h */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -233,7 +251,6 @@
 				A249FB81A4C0C78343BD8037 /* Responders */,
 				6C0B59117E6A2A9169290F8E /* Private */,
 				6C0B5B53134A82F9E7F4CE1A /* DataSources */,
-				A249FE6885C0A42E69793B62 /* Views */,
 			);
 			path = SymbiOSis;
 			sourceTree = "<group>";
@@ -255,15 +272,6 @@
 			path = Responders;
 			sourceTree = "<group>";
 		};
-		A249FE6885C0A42E69793B62 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				A249F1B53A80D1059917A54A /* SYMActivityIndicatorView.m */,
-				A249F7A8070FD43228F59955 /* SYMActivityIndicatorView.h */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		A249FEAB6BB77D816577F786 /* Bindings */ = {
 			isa = PBXGroup;
 			children = (
@@ -281,6 +289,8 @@
 				A249FC231C495A0B1D2CF53E /* SYMTableViewBinding.m */,
 				A249F35D0D11066779C028D2 /* SYMViewBinding.m */,
 				A249FF0553996922DCCCFBD0 /* SYMViewBinding.h */,
+				A249F8811577B259070C5900 /* SYMHideViewShowViewWhenDataLoadsBinding.m */,
+				A249F494ED7C98ADA62BE626 /* SYMHideViewShowViewWhenDataLoadsBinding.h */,
 			);
 			path = Bindings;
 			sourceTree = "<group>";
@@ -323,7 +333,10 @@
 				A249F1760B8939F8CA2266DC /* SYMPickerViewSelectionResponder.h in Headers */,
 				6C0B5F4B08202A116126182A /* UIView+SymbiOSisPrivate.h in Headers */,
 				6C0B516EF3A7AC60A6086934 /* SYMStaticDataSource.h in Headers */,
-				A249F08FF28656A75BA5299D /* SYMActivityIndicatorView.h in Headers */,
+				A249F9C3CFE95305C03F86E9 /* SYMViewState.h in Headers */,
+				A249F5BDFE8E055721B009AD /* SYMHideViewShowViewWhenDataLoadsBinding.h in Headers */,
+				A249FA2818FFCAA5EA4E74FE /* SYMBindingType.h in Headers */,
+				A249F7C5C0E552A231EBFB06 /* SYMDelayedTestDataSource.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,7 +429,10 @@
 				A249F07C5CB9B5D546D53DA2 /* SYMPickerViewSelectionResponder.m in Sources */,
 				6C0B5E67B9DB6BF0C6513252 /* UIView+SymbiOSisPrivate.m in Sources */,
 				6C0B524EAC7D7D72CB59488C /* SYMStaticDataSource.m in Sources */,
-				A249F20E42B62ED9C1635DB5 /* SYMActivityIndicatorView.m in Sources */,
+				A249F3DEB88375672B981FCB /* SYMViewState.m in Sources */,
+				A249F3CFD15D6220A2FA617D /* SYMHideViewShowViewWhenDataLoadsBinding.m in Sources */,
+				A249FF6BDED048FE65900DC8 /* SYMBindingType.m in Sources */,
+				A249F023F3898EFFA0CB8097 /* SYMDelayedTestDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

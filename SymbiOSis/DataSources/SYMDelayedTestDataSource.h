@@ -1,5 +1,5 @@
 //
-// UICollectionViewCell+SymbiOSis.h
+// SYMDelayedTestDataSource.h
 //
 // Copyright (c) 2015 Dan Hall
 // Twitter: @_danielhall
@@ -24,14 +24,17 @@
 // SOFTWARE.
 
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "SYMDataSource.h"
 
-@interface UICollectionViewCell (SymbiOSis)
+/** This testing data source is used to simulate scenarios where there is a delay loading a value, for example to simulate a data source that loads values from a remote endpoint and takes time before those values are populated.  Good for testing loading screens / loading messages, activity indicators, etc.  Also used to simulate a data source that ends up having a nil value. */
+@interface SYMDelayedTestDataSource : SYMDataSource
 
-/** Sets the dataSourceIndex on all bindings contained within this cell */
-@property (nonatomic) NSIndexPath * dataSourceIndexPath;
+/** The number of seconds of delay before this data source's value property is set to the string specified in the "testValue" IBInspectable property */
+@property (nonatomic) IBInspectable CGFloat loadDelay;
 
-/** Tells all bindings within the cell to reset their views to the state before the bindings altered them.  Used instead of manual overrides of -prepareForReuse; */
--(void)resetBindings;
+/** A string value that should be set as this data source's value after the specified delay. To set this data source's value as an array of strings, set this property to a comma-separated list of the desired string values. Leave empty to simulated a nil value being return from an endpoint. */
+@property (nonatomic, copy) IBInspectable NSString *testValue;
+
 
 @end

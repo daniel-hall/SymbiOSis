@@ -25,11 +25,14 @@
 
 
 #import "SYMBinding.h"
+#import "SYMViewState.h"
+#import <objc/runtime.h>
 
 
 @interface SYMBinding ()
 
 @property (nonatomic, strong, readwrite) IBOutlet SYMDataSource *dataSource;
+@property (nonatomic, strong) NSArray *initialViewStates;
 @property (nonatomic) BOOL kvoInitialized;
 
 @end
@@ -39,7 +42,28 @@
 
 
 -(void)awakeFromNib {
+    NSMutableArray *array = [NSMutableArray array];
+    for (UIView *view in self.views) {
+        [array addObject:view.symViewState];
+    }
+    self.initialViewStates = [array copy];
     [self bindViews:self.views toDataSource:self.dataSource];
+}
+
+
+- (void)setValue:(id)value {
+    objc_property_t valueProperty = class_getProperty([self class], [@"value" UTF8String]);
+    NSString *propertyAttributes = [NSString stringWithCString:property_getAttributes(valueProperty) encoding:NSUTF8StringEncoding];
+    NSString *typeString = [[[propertyAttributes componentsSeparatedByString:@","][0] substringFromIndex:2] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"\""]];
+    Class type = NSClassFromString(typeString);
+
+    if (type && [value isKindOfClass:type]) {
+        _value = value;
+    }
+
+    else {
+        _value = nil;
+    }
 }
 
 -(void)bindViews:(NSArray *)views toDataSource:(SYMDataSource *)dataSource {
@@ -80,12 +104,19 @@
     //override in subclasses
 }
 
+- (void)resetViews {
+    for (SYMViewState *viewState in self.initialViewStates) {
+        viewState.view.symViewState = viewState;
+    }
+}
+
+
 -(void)setup {
     //init setup for subclasses
 }
 
 -(void)setDataSourceIndexPath:(NSIndexPath *)dataSourceIndexPath {
-    _dataSourceIndexPath = dataSourceIndexPath;
+    [super setDataSourceIndexPath:dataSourceIndexPath];
     self.value = [self.dataSource valueForIndexPath:dataSourceIndexPath];
     for (UIView *view in self.views) {
         [self updateView:view];

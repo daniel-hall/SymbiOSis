@@ -25,10 +25,12 @@
 
 
 #import "SYMBindingSet.h"
+#import "SYMViewState.h"
 
 @interface SYMBindingSet ()
 
 @property (nonatomic, strong) NSMutableArray *bindings;
+@property (nonatomic, strong) NSMutableArray *initialViewStates;
 
 @end
 
@@ -38,6 +40,10 @@
 -(void)addBinding:(SYMBinding *)binding withViews:(NSArray *)views {
     // It is necessary to add bindings as subviews because underlying code will later walk the view hierarchy to check if each binding is contained in a table or collection view cell.
     [self addSubview:binding];
+
+    for (UIView *view in views) {
+        [self.initialViewStates addObject:view.symViewState];
+    }
 
     [binding bindViews:views toDataSource:self.dataSource];
     [self.bindings addObject:binding];
@@ -52,11 +58,25 @@
 }
 
 
+- (void)resetViews {
+    for (SYMViewState *viewState in self.initialViewStates) {
+        viewState.view.symViewState = viewState;
+    }
+}
+
+
 -(NSMutableArray *)bindings {
     if (!_bindings) {
         _bindings = [NSMutableArray array];
     }
     return _bindings;
+}
+
+- (NSMutableArray *)initialViewStates {
+    if (_initialViewStates == nil) {
+        _initialViewStates = [NSMutableArray array];
+    }
+    return _initialViewStates;
 }
 
 

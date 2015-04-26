@@ -31,6 +31,7 @@
 
 -(id)dequeueReusableCellWithIdentifier:(NSString *)identifier andDataSourceIndexPath:(NSIndexPath *)dataSourceIndexPath {
     UITableViewCell *cell = [self dequeueReusableCellWithIdentifier:identifier];
+    [cell resetBindings];
     cell.dataSourceIndexPath = dataSourceIndexPath;
     return cell;
 }

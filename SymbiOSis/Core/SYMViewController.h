@@ -35,7 +35,7 @@
 @interface SYMViewController : UIViewController <SYMDataSourcesOwner>
 
 /** Bindings link a UIView or UIControl subclass to a specific SYMDataSource.  Any bindings added to the storyboard must be added to this outlet collection so they are retained for the lifetime of the view controller. */
-@property (nonatomic, strong) IBOutletCollection(SYMBinding) NSArray *bindings;
+@property (nonatomic, strong) IBOutletCollection(SYMBindingType) NSArray *bindings;
 
 /** SYMDataSource objects are responsible for retrieving, holding and exposing data to bindings, responders, etc. Data sources should be added to this collection so the SYMViewController can enumerate them, retain them, etc. */
 @property (nonatomic, strong) IBOutletCollection(SYMDataSource) NSArray *dataSources;

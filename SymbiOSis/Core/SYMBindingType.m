@@ -1,5 +1,5 @@
 //
-// SYMActivityIndicatorView.h
+// SYMBindingType.m
 //
 // Copyright (c) 2015 Dan Hall
 // Twitter: @_danielhall
@@ -24,16 +24,22 @@
 // SOFTWARE.
 
 
-#import <Foundation/Foundation.h>
-#import <UIKit/UIActivityIndicatorView.h>
-#import "SYMDataSource.h"
+#import "SYMBindingType.h"
 
 
-/** A handy subclass of UIActivityIndicatorView that will automatically animate until all the data sources it is monitoring have been populated with data.  At that point, it will stop animating and hide itself. */
-@interface SYMActivityIndicatorView : UIActivityIndicatorView
+@implementation SYMBindingType
 
-/** A collection of data sources that this Activity Indicator View will monitor.  When all connected data sources have populated their values, the indicator will stop animating and disappear */
-@property (nonatomic, strong) IBOutletCollection(SYMDataSource) NSArray *dataSources;
 
+- (void)awakeFromNib {
+    // The below silliness exists because bindings have to subclass UIView in order to be added to prototype cells, but we don't want them visible
+    self.frame = CGRectZero;
+    self.backgroundColor = [UIColor clearColor];
+    self.hidden = YES;
+    self.alpha = 0;
+}
+
+- (void)resetViews {
+    //Overridden in subclasses
+}
 
 @end
