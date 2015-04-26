@@ -66,8 +66,6 @@
 @property(nonatomic) BOOL enabled;
 @property(nonatomic) NSInteger numberOfLines;
 @property(nonatomic) BOOL adjustsFontSizeToFitWidth;
-@property(nonatomic) BOOL adjustsLetterSpacingToFitWidth;
-@property(nonatomic) CGFloat minimumFontSize;
 @property(nonatomic) UIBaselineAdjustment baselineAdjustment;
 @property(nonatomic) CGFloat minimumScaleFactor;
 @property(nonatomic) CGFloat preferredMaxLayoutWidth;

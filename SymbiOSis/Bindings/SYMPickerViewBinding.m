@@ -69,7 +69,7 @@
 
 
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return self.dataSource.value[row];
+    return ((NSArray *)self.dataSource.value)[row];
 }
 
 
@@ -85,7 +85,7 @@
 
 
 -(UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view {
-    return [self.dataSource.value[row] copy];
+    return [((NSArray *)self.dataSource.value)[row] copy];
 }
 
 
@@ -94,13 +94,13 @@
     if (label) {
         self.sourceValue = label.text;
         for (SYMPickerViewSelectionResponder *responder in self.itemSelectionResponders) {
-            [responder pickerView:pickerView selectedValue:self.sourceValue withLabel:label fromIndexPath:[NSIndexPath indexPathForRow:row inSection:component]];
+            [responder pickerView:pickerView selectedValue:(NSString *)self.sourceValue withLabel:label fromIndexPath:[NSIndexPath indexPathForRow:row inSection:component]];
         }
     }
     else {
         self.sourceValue = [self pickerView:pickerView titleForRow:row forComponent:component];
         for (SYMPickerViewSelectionResponder *responder in self.itemSelectionResponders) {
-            [responder pickerView:pickerView selectedValue:self.sourceValue withLabel:nil fromIndexPath:[NSIndexPath indexPathForRow:row inSection:component]];
+            [responder pickerView:pickerView selectedValue:(NSString *)self.sourceValue withLabel:nil fromIndexPath:[NSIndexPath indexPathForRow:row inSection:component]];
         }
     }
 }

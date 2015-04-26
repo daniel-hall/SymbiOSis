@@ -18,3 +18,4 @@ DerivedData
 *.xcuserstate
 .idea
 SymbiOSis/.DS_Store
+.DS_Store

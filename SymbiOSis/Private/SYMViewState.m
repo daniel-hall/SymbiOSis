@@ -123,8 +123,6 @@
     viewState.enabled = self.enabled;
     viewState.numberOfLines = self.numberOfLines;
     viewState.adjustsFontSizeToFitWidth = self.adjustsFontSizeToFitWidth;
-    viewState.adjustsLetterSpacingToFitWidth = self.adjustsLetterSpacingToFitWidth;
-    viewState.minimumFontSize = self.minimumFontSize;
     viewState.baselineAdjustment = self.baselineAdjustment;
     viewState.minimumScaleFactor = self.minimumScaleFactor;
     viewState.preferredMaxLayoutWidth = self.preferredMaxLayoutWidth;
@@ -146,8 +144,6 @@
     self.enabled = viewState.enabled;
     self.numberOfLines = viewState.numberOfLines;
     self.adjustsFontSizeToFitWidth = viewState.adjustsFontSizeToFitWidth;
-    self.adjustsLetterSpacingToFitWidth = viewState.adjustsLetterSpacingToFitWidth;
-    self.minimumFontSize = viewState.minimumFontSize;
     self.baselineAdjustment = viewState.baselineAdjustment;
     self.minimumScaleFactor = viewState.minimumScaleFactor;
     self.preferredMaxLayoutWidth = viewState.preferredMaxLayoutWidth;

@@ -51,7 +51,7 @@
 -(void)update {
     NSMutableArray *arrayOfSections = [NSMutableArray arrayWithCapacity:self.sectionDataSources.count];
     for (NSUInteger index = 0; index < self.sectionDataSources.count; index++) {
-        NSArray *sectionValue = ((SYMDataSource *)self.sectionDataSources[index]).value;
+        NSArray *sectionValue = (NSArray *) ((SYMDataSource *)self.sectionDataSources[index]).value;
         if ([sectionValue isKindOfClass:[NSArray class]] && sectionValue.count) {
             [arrayOfSections addObject:sectionValue];
         }
@@ -65,14 +65,14 @@
 
         //handle the case where our value is a one-dimensional array of values that populate a single table view / collection view section, or a single picker view component.
         if (indexPath.section == 0) {
-            NSArray *valueArray = self.value;
+            NSArray *valueArray = (NSArray *) self.value;
             if (valueArray.count > 0 && ![valueArray[0] isKindOfClass:[NSArray class]] && indexPath.item < valueArray.count) {
                 return valueArray[indexPath.item];
             }
         }
 
         //otherwise, attempt to handle our value as a two dimensional array with sections and rows / items, and safely retrieve the value at self.value[indexPath.section][indexPath.item].
-        NSArray *sections = self.value;
+        NSArray *sections = (NSArray *) self.value;
         if (indexPath.section < sections.count && [sections[indexPath.section] isKindOfClass:[NSArray class]]) {
             NSArray *items = sections[indexPath.section];
             if (indexPath.item < items.count) {
@@ -91,7 +91,7 @@
 
 - (NSInteger)numberOfSections {
     if ([self.value isKindOfClass:[NSArray class]]) {
-        NSArray *sections = self.value;
+        NSArray *sections = (NSArray *) self.value;
         // If our value is a two dimensional array (array of arrays), return the number of arrays it contains
         if ([sections.firstObject isKindOfClass:[NSArray class]]) {
             return sections.count;
@@ -108,7 +108,7 @@
 
 - (NSInteger)numberOfItemsInSection:(NSInteger)section {
     if (section < [self numberOfSections]) {
-        NSArray *sections = self.value;
+        NSArray *sections = (NSArray *) self.value;
         // If our value is a two dimensional array (array of arrays), return the number of items in the array for the given section
         if ([sections.firstObject isKindOfClass:[NSArray class]]) {
             NSArray *items = sections[section];
