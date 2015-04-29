@@ -30,4 +30,8 @@
 
 @dynamic views;
 
+- (void)updateView:(UIView *)view {
+    //Implement in subclasses
+}
+
 @end

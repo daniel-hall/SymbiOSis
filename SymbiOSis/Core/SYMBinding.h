@@ -42,7 +42,7 @@
 @interface SYMBinding : SYMBindingType
 
 /** The data source that will be observed, and have its value in some way linked to a UILabel, UIButton, etc. on the storyboard */
-@property (nonatomic, readonly) SYMDataSource *dataSource;
+@property (nonatomic) IBOutlet SYMDataSource *dataSource;
 
 /** The views that will be updated based on values from the data source.  Subclasses of SYMBinding should make this an IBOutletCollection (for connecting via storyboard) that is typed to a specific UIView subclass (e.g. UILabel, UIButton, etc.  This will allow Interface Builder to only allow connections to the right kind of control or subview. */
 @property (nonatomic, strong) NSArray *views;
@@ -61,7 +61,7 @@
 /** This method is implemented by subclasses to provide the exact logic needed to retrieve properties from the value passed in by the data source (e.g. firstName, lastName) and use them to populate the target view (e.g. fullNameLabel).  The binding subclass should redeclare method and retype the parameter to match the expected type of view for code completion.  See example project for sample usage in subclasses
 * @param view The view that should be updated by the binding.  When a binding is connected to multiple views via its "views" property / IBOutletCollection, this method is called for each view in the array.
 */
--(void)updateView:(UIView *)view;
+-(void)updateView:(NSObject *)view;
 
 /** Because the binding's KVO is set to fire immediately with the initial data source values, this setup method is called first to allow for setting up local dictionaries or setting before starting to respond to that data and populate the view.  Subclasses should override this if they need to do some sort of setup that might normally happen in their init method.  Because bindings are often decoded from storyboards, subclass specific setup should not be placed inside an init method or anywhere else except an override of this setup method */
 -(void)setup;

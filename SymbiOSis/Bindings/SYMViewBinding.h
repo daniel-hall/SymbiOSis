@@ -32,4 +32,9 @@
 /** Redeclare and retype the superclass's views property to make it an outlet collection of UIViews */
 @property (nonatomic, strong) IBOutletCollection(UIView) NSArray *views;
 
+/** Redeclare superclass method to specify UIView parameter
+* @param view The view that should be updated by the binding.  When a binding is connected to multiple views via its "views" property / IBOutletCollection, this method is called for each view in the array.
+*/
+-(void)updateView:(UIView *)view;
+
 @end

@@ -31,8 +31,7 @@
 
 @interface SYMBinding ()
 
-@property (nonatomic, strong, readwrite) IBOutlet SYMDataSource *dataSource;
-@property (nonatomic, strong) NSArray *initialViewStates;
+@property (nonatomic) NSArray *initialViewStates;
 @property (nonatomic) BOOL kvoInitialized;
 
 @end
@@ -100,7 +99,7 @@
 }
 
 
--(void)updateView:(UIView *)view {
+-(void)updateView:(NSObject *)view {
     //override in subclasses
 }
 
