@@ -83,8 +83,7 @@
 }
 
 - (void)resetViews {
-    __weak typeof(self) weakSelf = self;
-
+    
     for (UIView *hideView in self.viewsToHide) {
         hideView.hidden = NO;
     }
