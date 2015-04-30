@@ -31,8 +31,8 @@
 
 @interface SYMDataProviderToDataSourceBinding : NSObject
 
-@property (nonatomic, weak) IBOutlet SYMDataSource *dataSourceToUpdate;
-@property (nonatomic, weak) IBOutlet NSObject<SYMDataProviderProtocol> *dataProvider;
+@property (nonatomic) SYMDataSource *dataSourceToUpdate;
+@property (nonatomic) NSObject<SYMDataProviderProtocol> *dataProvider;
 
 - (instancetype)initWithDataProvider:(NSObject <SYMDataProviderProtocol>*)dataProvider dataSource:(SYMDataSource *)dataSourceToUpdate;
 

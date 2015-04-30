@@ -83,7 +83,7 @@
 }
 
 - (void)resetViews {
-    
+
     for (UIView *hideView in self.viewsToHide) {
         hideView.hidden = NO;
     }
