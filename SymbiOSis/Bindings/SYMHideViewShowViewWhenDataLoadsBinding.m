@@ -29,6 +29,12 @@
 
 @implementation SYMHideViewShowViewWhenDataLoadsBinding
 
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    self.allowEmptyArrays = YES;
+    return self;
+}
+
 - (void)awakeFromNib {
     // The below silliness exists because bindings have to subclass UIView in order to be added to prototype cells, but we don't want them visible
     self.frame = CGRectZero;
@@ -59,13 +65,7 @@
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    for (SYMDataSource *dataSource in self.dataSources) {
-        if (dataSource.value == nil) {
-            return;
-        }
-    }
-
-    [self handleDataLoaded];
+    [self resetViews];
 }
 
 - (void)handleDataLoaded {
@@ -85,10 +85,6 @@
 - (void)resetViews {
     __weak typeof(self) weakSelf = self;
 
-    for (UIView *timeoutView in self.timeoutViews) {
-        timeoutView.hidden = YES;
-    }
-
     for (UIView *hideView in self.viewsToHide) {
         hideView.hidden = NO;
     }
@@ -97,14 +93,8 @@
         showView.hidden = YES;
     }
 
-    if (self.timeoutInterval.floatValue > .01) {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [weakSelf checkIfTimedOut];
-        });
-    }
-
     for (SYMDataSource *dataSource in self.dataSources) {
-        if (dataSource.value == nil) {
+        if (dataSource.value == nil || (!self.allowEmptyArrays && [dataSource.value isKindOfClass:[NSArray class]] && ((NSArray *) dataSource.value).count == 0)) {
             return;
         }
     }

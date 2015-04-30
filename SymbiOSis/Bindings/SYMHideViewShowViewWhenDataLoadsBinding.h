@@ -33,18 +33,21 @@
 @interface SYMHideViewShowViewWhenDataLoadsBinding : SYMBindingType
 
 /** A collection of one or more SYMDataSources (or subclasses) that will be monitored. When all the data sources ae populated with non-nil values, this binding will hide the views in its "viewsToHide" IBOutletCollection, and unhide the views in its "viewsToUnhide" IBOutletCollection */
-@property (nonatomic, strong) IBOutletCollection(SYMDataSource) NSArray *dataSources;
+@property (nonatomic) IBOutletCollection(SYMDataSource) NSArray *dataSources;
 
 /** One or more views that will have their "hidden" property set to YES when all data sources have loaded.  For example, a dimming overlay and an activity indicator that you wish to remove when all data is ready for the scene */
-@property (nonatomic, strong) IBOutletCollection(UIView) NSArray *viewsToHide;
+@property (nonatomic) IBOutletCollection(UIView) NSArray *viewsToHide;
 
 /** One or more views that will have their "hidden" property set to NO when all data sources have loaded.  For example, labels or a table view that are not shown unless / until there is data to populate them */
-@property (nonatomic, strong) IBOutletCollection(UIView) NSArray *viewsToUnhide;
+@property (nonatomic) IBOutletCollection(UIView) NSArray *viewsToUnhide;
 
 /** One or more views that will have their "hidden" property set to NO if all data sources have not finished loading non-nil values by the time the timoutInterval has elapsed.  For example, a message alerting the user that the data could not be retrieved at this time.  If the data sources finish loading AFTER the timeoutInterval elapses, the timeout views will be hidden again and the viewToUnhide will be shown as normal */
-@property (nonatomic, strong) IBOutletCollection(UIView) NSArray *timeoutViews;
+@property (nonatomic) IBOutletCollection(UIView) NSArray *timeoutViews;
 
 /** The time, in seconds, that can elapse without the data sources being populated before any timeoutViews are shown */
-@property (nonatomic, strong) IBInspectable NSNumber *timeoutInterval;
+@property (nonatomic) IBInspectable NSNumber *timeoutInterval;
+
+/** Should empty arrays be counted as non-nil data?  Default is YES. If NO, then data sources that have non-nil, but empty arrays will be counted as nil. */
+@property (nonatomic) IBInspectable BOOL allowEmptyArrays;
 
 @end
