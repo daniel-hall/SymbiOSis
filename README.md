@@ -1,6 +1,6 @@
 # SymbiOSis
 
-### Storyboard-Drive Development.
+### Storyboard Driven Development
 
 Perhaps the easiest, fastest and most sustainable way to create iOS apps, SymbiOSis is a framework that allows you to organize your code into small, testable, reusable components that are connected together using Interface Builder.
 
