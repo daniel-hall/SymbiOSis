@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-private protocol SymbiOSisInitializable {
+protocol SymbiOSisInitializable {
     func symbiOSisInitialize()
 }
 
@@ -17,173 +17,166 @@ protocol Initializable {
     func initialize()
 }
 
-protocol DataObserver:class {
-    associatedtype ObservedDataType
-    func updateWith(data:Data<ObservedDataType>)
+
+/// Protocol adopted by classes wanting to be notified when a View Model Source is updated
+protocol ViewModelSourceObserver:class {
+    func viewModelSourceDidUpdate(source:Any)
 }
 
-class Data<DataType> {
-    private var observerClosures = [(Data<DataType>)->()]()
-    private var data = [DataType]()
+/// Protocol defining a View Model Source, a type which retrieves and holds one or an array of View Models for Bindings to connect to Views
+protocol ViewModelSourceProtocol: class, Initializable {
+    associatedtype ViewModelType
+    func set(_ viewModel:ViewModelType)
+    func set(_ viewModels:[ViewModelType])
+    func add<Observer:ViewModelSourceObserver>(observer:Observer)
+    subscript(indexPath:IndexPath?) -> ViewModelType? { get }
+}
+
+/// Base class for all View Model Sources.  Must inherit from NSObject to be used in Storyboards
+class ViewModelSource : NSObject, SymbiOSisInitializable {
+    private var _observerClosures = [()->()]()
+    private var _contents:Any?
+    func symbiOSisInitialize() {
+        (self as? Initializable)?.initialize()
+    }
+}
+
+// Default behaviors and implementations for View Model Sources
+extension ViewModelSourceProtocol where Self:ViewModelSource {
     
-    var count:Int {
-        return data.count
+    private var contents:[ViewModelType] {
+        _contents = _contents ?? [ViewModelType]()
+        return _contents as! [ViewModelType]
     }
     
-    var copy:[DataType] {
-        return data
-    }
-    
-    func add<Observer:DataObserver where Observer.ObservedDataType == DataType>(observer:Observer) {
-        observerClosures.append({
-            [weak observer](data:Data<DataType>) in
-            observer?.updateWith(data: data)
-        })
-        observer.updateWith(data:self)
-    }
-    
-    func set(_ newData:DataType) {
-        data = [newData]
+    func set(_ viewModel:ViewModelType) {
+        _contents = [viewModel]
         updateObservers()
     }
     
-    func set(_ newData:[DataType]) {
-        data = newData
+    func set(_ viewModels:[ViewModelType]) {
+        _contents = viewModels
         updateObservers()
     }
     
-    subscript(indexPath:IndexPath?) -> DataType? {
+    func add<Observer:ViewModelSourceObserver>(observer:Observer) {
+        _observerClosures.append({ [weak observer, unowned self] in observer?.viewModelSourceDidUpdate(source: self) })
+        observer.viewModelSourceDidUpdate(source: self)
+    }
+    
+    subscript(indexPath:IndexPath?) -> ViewModelType? {
         return get(indexPath: indexPath)
     }
     
     private func updateObservers() {
-        observerClosures.forEach{ $0(self) }
+        _observerClosures.forEach{ $0() }
     }
     
-    private func get(indexPath:IndexPath?) -> DataType? {
-        if let indexPath = indexPath, indexPath.section == 0, indexPath.row < data.count {
-            return data[indexPath.row]
+    private func get(indexPath:IndexPath?) -> ViewModelType? {
+        if let indexPath = indexPath, indexPath.section == 0, indexPath.row < contents.count {
+            return contents[indexPath.row]
         }
         
         return nil
     }
     
-    private func get<DataType:Collection where DataType.Index == Int>(indexPath:IndexPath?) -> DataType? {
-        if let indexPath = indexPath, let section = data[indexPath.section] as? [DataType], indexPath.section < data.count, indexPath.row < section.count {
+    private func get<ViewModelType:Collection where ViewModelType.Index == Int>(indexPath:IndexPath?) -> ViewModelType? {
+        if let indexPath = indexPath, let section = contents[indexPath.section] as? [ViewModelType], indexPath.section < contents.count, indexPath.row < section.count {
             return section[indexPath.row]
         }
         return nil
     }
 }
 
-protocol DataSourceProtocol: class, Initializable {
-    associatedtype DataType
-    var data:Data<DataType> { get }
+/// Protocol for Bindings, which are types that set properties on Views to match values on View Models.
+protocol BindingProtocol : class, ViewModelSourceObserver, Initializable {
+    associatedtype ViewModelSourceType:ViewModelSourceProtocol
+    var source:ViewModelSourceType! { get set }
+    /// Initializes the Binding by passing it a closure which will supply the View Model at runtime. The result of calling viewModel() can be used with the bind function inside this method.
+    func initialize(with viewModel:()->ViewModelSourceType.ViewModelType)
 }
 
-protocol BindingProtocol : class, DataObserver, Initializable {
-    associatedtype DataSourceType:DataSourceProtocol
-    var dataSource:DataSourceType! { get }
-    var dataIndexPath:IndexPath? { get }
-}
-
-
-class Binding : NSObject, SymbiOSisInitializable  {
-    private var bindingClosures = [(Any)->()]()
-    fileprivate var _dataIndexPath:IndexPath? = IndexPath(row:0, section:0)
+/// Base class for Bindings.  Must inherit from NSObject to be used in Storyboards, must inherit from UIView to be added to prototype cells in Table Views and Collection Views
+class Binding : UIView, SymbiOSisInitializable  {
+    private var _bindingClosures = [()->()]()
+    fileprivate var indexPath:IndexPath? = IndexPath(row:0, section:0)
     func symbiOSisInitialize() {
-        if let initializable = self as? Initializable {
-            initializable.initialize()
-        }
-    }
-}
-
-class DataSource : NSObject, SymbiOSisInitializable {
-    private func symbiOSisInitialize() {
         (self as? Initializable)?.initialize()
     }
 }
 
+// Default behaviors and implementations for Binding types
 extension BindingProtocol where Self:Binding {
-    typealias ObservedDataType = DataSourceType.DataType
     
-    var dataIndexPath:IndexPath? { return _dataIndexPath }
-    
-    func updateWith(data:Data<DataSourceType.DataType>) {
-        bindingClosures.forEach{ $0(data) }
+    func initialize() {
+        let viewModelClosure = { [unowned self] in self.source[self.indexPath]! }
+        initialize(with: viewModelClosure)
     }
-    func bind<T, U>(_ dataMethod:(DataSourceType.DataType)->()->U, to outletCollection:[T], viewMethod:(T)->(U)->()) {
-        bindingClosures.append({
-            [unowned self] data in
-            guard let data = data as? Data<DataSourceType.DataType> else { return }
-            outletCollection.forEach{
-                view in
-                if let value = data[self.dataIndexPath] {
-                    viewMethod(view)(dataMethod(value)())
-                }
-            }
-        })
-        dataSource.data.add(observer: self)
+    
+    func viewModelSourceDidUpdate(source:Any) {
+        _bindingClosures.forEach{ $0() }
+    }
+
+    func bind<T>(_ value:@autoclosure(escaping) ()->T?, to property:@escaping (T)->()) {
+        _bindingClosures.append({ if let value = value() { property(value) } })
+        source.add(observer:self)
+    }
+    
+    func bind<T>(_ value:@autoclosure(escaping) ()->T?, to property:@escaping (T?)->()) {
+        _bindingClosures.append({ property(value()) })
+        source.add(observer:self)
     }
 }
 
+/// Base class for Responders, which are types that contain a single behavior that runs in response to user interaction, size changes, segues, or other events.
 class Responder: SymbiOSisInitializable {
     weak var viewController: UIViewController!
-    
-    private func symbiOSisInitialize() {
+    func symbiOSisInitialize() {
         (self as? Initializable)?.initialize()
     }
 }
 
-class SymbiOSisViewController: UIViewController, SymbiOSisInitializable {
-    private lazy var topLevelObjects:[NSObject] = self.value(forKey: "topLevelObjectsToKeepAliveFromStoryboard") as? [NSObject] ?? [NSObject]()
+// Makes all UIViewControllers interact with SymbiOSis types
+extension UIViewController {
+    private var topLevelObjects:[NSObject] { return self.value(forKey: "topLevelObjectsToKeepAliveFromStoryboard") as? [NSObject] ?? [NSObject]() }
     private var symbiOSisInitializables:[SymbiOSisInitializable] { return topLevelObjects.flatMap{ $0 as? SymbiOSisInitializable} }
+    
+    private class func swizzle(_ original: Selector, _ replacement: Selector) {
+        let originalImplementation = class_getInstanceMethod(self, original)
+        let replacementImplementation = class_getInstanceMethod(self, replacement)
+        method_exchangeImplementations(originalImplementation, replacementImplementation)
+    }
+    
+    override public class func initialize() {
+        if self == UIViewController.self {
+            swizzle(#selector(viewDidLoad), #selector(symbiOSisViewDidLoad))
+            swizzle(#selector(prepare(for:sender:)), #selector(symbiOSisPrepare(for:sender:)))
+        }
+    }
     
     func symbiOSisInitialize() {
         (self as? Initializable)?.initialize()
         symbiOSisInitializables.forEach { ($0 as? Responder)?.viewController = self; $0.symbiOSisInitialize() }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    func symbiOSisViewDidLoad() {
+        symbiOSisViewDidLoad()
         symbiOSisInitialize()
     }
-}
-
-extension UILabel {
-    @nonobjc func setText(to string:String) {
-        text = string
+    
+    func symbiOSisPrepare(for segue:UIStoryboardSegue, sender:AnyObject?) {
+        print("Doing symbiOSisPrepareForSegue")
     }
 }
 
-
-
-struct Person {
-    let firstName:String
-    let lastName:String
-    func fullName() -> String {
-        return "\(firstName) \(lastName)"
-    }
-}
-
-class PersonDataSource : DataSource, DataSourceProtocol {
-    let data = Data<Person>()
-    func initialize() {
-        self.data.set(Person(firstName: "Sally", lastName: "Black"))
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-            self.data.set(Person(firstName: "Joseph", lastName: "Schmoseph"))
+// Adds a closure to all optional collections of UILabels to set the text property on all of those labels.  Used by Bindings.
+extension Optional where Wrapped:Collection, Wrapped.Iterator.Element == UILabel {
+    var text:(String?)->() {
+        return {
+            string in
+            if let collection = self as? [UILabel] {
+                collection.forEach { $0.text = string}
+            }
         }
     }
 }
-
-class PersonBinding : Binding, BindingProtocol {
-    @IBOutlet var dataSource:PersonDataSource!
-    @IBOutlet var fullNameLabels:[UILabel]!
-    
-    func initialize() {
-        bind(Person.fullName, to: fullNameLabels, viewMethod: UILabel.setText)
-    }
-}
-
-
-
